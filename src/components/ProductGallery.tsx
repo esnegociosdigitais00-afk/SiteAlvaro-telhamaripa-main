@@ -4,6 +4,7 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Scale, Heart, Share2, ArrowLeft, ArrowRight } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import { Link } from 'react-router-dom'; // Importando Link
 
 interface Product {
   id: number;
@@ -47,9 +48,11 @@ const ProductCard = ({ product }: { product: Product }) => (
       <h3 className="text-base font-semibold text-dark-blue truncate mb-2">
         {product.name}
       </h3>
-      <Button className="w-full bg-medium-blue hover:bg-medium-blue/90 rounded-lg transition-colors">
-        Ver Detalhes
-      </Button>
+      <Link to={`/produto/${product.id}`}> {/* Usando Link para navegação */}
+        <Button className="w-full bg-medium-blue hover:bg-medium-blue/90 rounded-lg transition-colors">
+          Ver Detalhes
+        </Button>
+      </Link>
     </CardContent>
   </Card>
 );
