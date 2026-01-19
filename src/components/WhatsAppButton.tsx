@@ -1,5 +1,5 @@
 import React from 'react';
-import { MessageCircle, Whatsapp } from 'lucide-react';
+import { MessageCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 const WhatsAppButton = () => {
@@ -17,7 +17,8 @@ const WhatsAppButton = () => {
         className="w-14 h-14 rounded-full bg-green-500 hover:bg-green-600 shadow-xl p-0 relative overflow-hidden"
         aria-label="Fale conosco pelo WhatsApp"
       >
-        <Whatsapp className="h-7 w-7 text-white" />
+        {/* Usando MessageCircle como fallback para o ícone do WhatsApp */}
+        <MessageCircle className="h-7 w-7 text-white fill-white" />
       </Button>
       
       {/* CTA para desktop/telas maiores */}
