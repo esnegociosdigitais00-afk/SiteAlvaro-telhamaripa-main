@@ -8,6 +8,7 @@ import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 import ProductImageGallery from '@/components/ProductImageGallery';
 import ProductRelatedCarousel from '@/components/ProductRelatedCarousel';
+import ProductFullDescriptionSection from '@/components/ProductFullDescriptionSection'; // Importando novo componente
 import { MadeWithDyad } from '@/components/made-with-dyad';
 import { useIsMobile } from '@/hooks/use-mobile';
 
@@ -72,20 +73,14 @@ const WhatsAppCtaButton = ({ productName, productRef }: { productName: string, p
 };
 
 const ProductDescription = ({ product }: { product: typeof mockProduct }) => {
-  const [isExpanded, setIsExpanded] = React.useState(false);
-  const description = isExpanded ? product.descriptionLong : product.descriptionShort;
-
+  // Removendo a lógica de expansão, pois a descrição completa será exibida em uma seção separada abaixo.
   return (
     <div className="text-gray-700 text-base space-y-3">
-      <p>{description}</p>
-      {product.descriptionLong.length > product.descriptionShort.length && (
-        <button 
-          onClick={() => setIsExpanded(!isExpanded)}
-          className="text-medium-blue hover:text-dark-blue font-medium text-sm"
-        >
-          {isExpanded ? 'Ler menos' : 'Ler mais'}
-        </button>
-      )}
+      <p>{product.descriptionShort}</p>
+      {/* Adicionando um link para a seção completa, se necessário, ou apenas mantendo o resumo */}
+      <a href="#descricao-completa" className="text-medium-blue hover:text-dark-blue font-medium text-sm block mt-2">
+        Leia a descrição completa abaixo
+      </a>
     </div>
   );
 };
@@ -140,7 +135,7 @@ const ProductDetail = () => {
               </p>
             </div>
 
-            {/* Descrição */}
+            {/* Descrição Curta */}
             <ProductDescription product={product} />
 
             {/* Botão de Ação (Desktop) */}
@@ -152,6 +147,9 @@ const ProductDetail = () => {
             <TechnicalSpecs specs={product.specs} />
           </div>
         </div>
+        
+        {/* Seção de Descrição Completa (Full Width) */}
+        <ProductFullDescriptionSection description={product.descriptionLong} />
 
         {/* Produtos Relacionados */}
         <section className="mt-12">
