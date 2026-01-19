@@ -3,7 +3,8 @@ import HeroCarousel from "@/components/HeroCarousel";
 import ProductGallery from "@/components/ProductGallery";
 import MobileFooter from "@/components/MobileFooter";
 import WhatsAppButton from "@/components/WhatsAppButton";
-import CategorySection from "@/components/CategorySection"; // Importando novo componente
+import CategorySection from "@/components/CategorySection";
+import IsotelhaHighlightSection from "@/components/IsotelhaHighlightSection"; // Importando novo componente
 import { MadeWithDyad } from "@/components/made-with-dyad";
 
 const Index = () => {
@@ -13,9 +14,12 @@ const Index = () => {
       
       <main className="flex-grow pb-16 md:pb-0"> {/* Padding bottom para compensar o MobileFooter */}
         <HeroCarousel />
-        <CategorySection /> {/* Adicionando a seção de categorias aqui */}
+        <CategorySection />
         <ProductGallery />
         
+        {/* Seção de Destaque da Isotelha */}
+        <IsotelhaHighlightSection />
+
         {/* Adicionar mais conteúdo aqui, como categorias, informações da empresa, etc. */}
         <div className="container mx-auto px-4 py-10">
             <h2 className="text-xl font-semibold text-center text-gray-600">
