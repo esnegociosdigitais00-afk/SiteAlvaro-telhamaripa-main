@@ -4,10 +4,11 @@ import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import { cn } from '@/lib/utils';
+import { Link } from 'react-router-dom'; // Importando Link
 
 // Componente do Logo (Leão Dourado e Texto Azul)
 const Logo = () => (
-  <div className="flex items-center space-x-1">
+  <Link to="/" className="flex items-center space-x-1">
     {/* Leão Dourado (Placeholder) */}
     <span className="text-gold text-2xl font-serif">
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -19,7 +20,7 @@ const Logo = () => (
     <span className="text-medium-blue font-extrabold text-xl tracking-tight">
       CONSTRUÇÃO
     </span>
-  </div>
+  </Link>
 );
 
 // Componente da Barra de Busca
@@ -46,15 +47,17 @@ const MobileMenu = () => (
       <div className="flex flex-col h-full">
         <div className="bg-dark-blue p-4 flex items-center justify-between">
           <Logo />
-          <Button variant="ghost" size="icon" className="text-white hover:bg-dark-blue/80">
-            <ChevronLeft className="h-6 w-6" />
-          </Button>
+          <SheetTrigger asChild>
+            <Button variant="ghost" size="icon" className="text-white hover:bg-dark-blue/80">
+              <ChevronLeft className="h-6 w-6" />
+            </Button>
+          </SheetTrigger>
         </div>
         <nav className="flex flex-col p-4 space-y-2">
-          <a href="#" className="py-2 px-3 rounded-lg hover:bg-gray-100 transition-colors">Início</a>
-          <a href="#" className="py-2 px-3 rounded-lg hover:bg-gray-100 transition-colors">Produtos</a>
-          <a href="#" className="py-2 px-3 rounded-lg hover:bg-gray-100 transition-colors">Ofertas</a>
-          <a href="#" className="py-2 px-3 rounded-lg hover:bg-gray-100 transition-colors">Contato</a>
+          <Link to="/" className="py-2 px-3 rounded-lg hover:bg-gray-100 transition-colors">Início</Link>
+          <Link to="/categorias" className="py-2 px-3 rounded-lg hover:bg-gray-100 transition-colors">Categorias</Link>
+          <Link to="/ofertas" className="py-2 px-3 rounded-lg hover:bg-gray-100 transition-colors">Ofertas</Link>
+          <Link to="/contato" className="py-2 px-3 rounded-lg hover:bg-gray-100 transition-colors">Contato</Link>
         </nav>
       </div>
     </SheetContent>
@@ -75,11 +78,11 @@ const Header = () => {
         {/* Menu Hambúrguer (Mobile) / Placeholder (Desktop) */}
         <div className="flex items-center">
           <MobileMenu />
-          {/* Menu Desktop (Placeholder para links de navegação) */}
+          {/* Menu Desktop (Links de navegação) */}
           <nav className="hidden lg:flex space-x-6 text-dark-blue font-medium">
-            <a href="#" className="hover:text-medium-blue transition-colors">Início</a>
-            <a href="#" className="hover:text-medium-blue transition-colors">Categorias</a>
-            <a href="#" className="hover:text-medium-blue transition-colors">Ofertas</a>
+            <Link to="/" className="hover:text-medium-blue transition-colors">Início</Link>
+            <Link to="/categorias" className="hover:text-medium-blue transition-colors">Categorias</Link>
+            <Link to="/ofertas" className="hover:text-medium-blue transition-colors">Ofertas</Link>
           </nav>
         </div>
 
