@@ -16,15 +16,7 @@ const IsotelhaHighlightSection: React.FC = () => {
           A Isotelha é a solução definitiva para quem busca eficiência térmica e acústica sem abrir mão da estética. Com tecnologia de ponta, ela garante conforto, economia de energia e durabilidade superior para qualquer tipo de construção.
         </p>
         
-        <Link to="/produto/1"> {/* Link para um produto de exemplo */}
-          <Button 
-            size="lg" 
-            className="bg-gold hover:bg-gold/90 text-dark-blue font-bold text-base rounded-xl shadow-lg transition-all duration-300 transform hover:scale-[1.02] h-12 px-8"
-          >
-            <Zap className="h-5 w-5 mr-2" />
-            Ver Detalhes da Isotelha
-          </Button>
-        </Link>
+        {/* Botão removido conforme solicitado */}
       </div>
     </section>
   );
