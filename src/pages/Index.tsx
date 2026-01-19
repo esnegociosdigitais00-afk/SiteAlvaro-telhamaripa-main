@@ -3,6 +3,7 @@ import HeroCarousel from "@/components/HeroCarousel";
 import ProductGallery from "@/components/ProductGallery";
 import MobileFooter from "@/components/MobileFooter";
 import WhatsAppButton from "@/components/WhatsAppButton";
+import CategorySection from "@/components/CategorySection"; // Importando novo componente
 import { MadeWithDyad } from "@/components/made-with-dyad";
 
 const Index = () => {
@@ -12,6 +13,7 @@ const Index = () => {
       
       <main className="flex-grow pb-16 md:pb-0"> {/* Padding bottom para compensar o MobileFooter */}
         <HeroCarousel />
+        <CategorySection /> {/* Adicionando a seção de categorias aqui */}
         <ProductGallery />
         
         {/* Adicionar mais conteúdo aqui, como categorias, informações da empresa, etc. */}
