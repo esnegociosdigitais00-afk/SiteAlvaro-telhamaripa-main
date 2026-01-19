@@ -1,16 +1,29 @@
-// Update this page (the content is just a fallback if you fail to update the page)
-
+import Header from "@/components/Header";
+import HeroCarousel from "@/components/HeroCarousel";
+import ProductGallery from "@/components/ProductGallery";
+import MobileFooter from "@/components/MobileFooter";
+import WhatsAppButton from "@/components/WhatsAppButton";
 import { MadeWithDyad } from "@/components/made-with-dyad";
 
 const Index = () => {
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">Welcome to Your Blank App</h1>
-        <p className="text-xl text-gray-600">
-          Start building your amazing project here!
-        </p>
-      </div>
+    <div className="min-h-screen flex flex-col">
+      <Header />
+      
+      <main className="flex-grow pb-16 md:pb-0"> {/* Padding bottom para compensar o MobileFooter */}
+        <HeroCarousel />
+        <ProductGallery />
+        
+        {/* Adicionar mais conteúdo aqui, como categorias, informações da empresa, etc. */}
+        <div className="container mx-auto px-4 py-10">
+            <h2 className="text-xl font-semibold text-center text-gray-600">
+                Construindo o futuro, tijolo por tijolo.
+            </h2>
+        </div>
+      </main>
+      
+      <WhatsAppButton />
+      <MobileFooter />
       <MadeWithDyad />
     </div>
   );

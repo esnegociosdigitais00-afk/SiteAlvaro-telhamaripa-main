@@ -19,6 +19,9 @@ export default {
     },
     extend: {
       colors: {
+        "dark-blue": "hsl(var(--color-dark-blue))",
+        "medium-blue": "hsl(var(--color-medium-blue))",
+        "gold": "hsl(var(--color-gold))",
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
