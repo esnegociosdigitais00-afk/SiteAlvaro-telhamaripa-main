@@ -8,7 +8,8 @@ import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 import ProductImageGallery from '@/components/ProductImageGallery';
 import ProductRelatedCarousel from '@/components/ProductRelatedCarousel';
-import ProductFullDescriptionSection from '@/components/ProductFullDescriptionSection'; // Importando novo componente
+import ProductFullDescriptionSection from '@/components/ProductFullDescriptionSection'; 
+import FooterSecuritySeals from '@/components/FooterSecuritySeals'; // Importando o novo componente
 import { MadeWithDyad } from '@/components/made-with-dyad';
 import { useIsMobile } from '@/hooks/use-mobile';
 
@@ -169,6 +170,7 @@ const ProductDetail = () => {
 
       <WhatsAppButton />
       <MobileFooter />
+      <FooterSecuritySeals /> {/* Adicionando o selo */}
       <MadeWithDyad />
     </div>
   );

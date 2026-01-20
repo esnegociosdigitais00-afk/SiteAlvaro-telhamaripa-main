@@ -4,6 +4,7 @@ import { Home, ChevronRight } from 'lucide-react';
 import Header from '@/components/Header';
 import MobileFooter from '@/components/MobileFooter';
 import WhatsAppButton from '@/components/WhatsAppButton';
+import FooterSecuritySeals from '@/components/FooterSecuritySeals'; // Importando o novo componente
 import { MadeWithDyad } from '@/components/made-with-dyad';
 import { cn } from '@/lib/utils';
 
@@ -56,6 +57,7 @@ const CategoryPage = () => {
       
       <WhatsAppButton />
       <MobileFooter />
+      <FooterSecuritySeals /> {/* Adicionando o selo */}
       <MadeWithDyad />
     </div>
   );

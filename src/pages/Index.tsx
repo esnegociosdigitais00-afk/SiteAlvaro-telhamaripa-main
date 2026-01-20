@@ -4,7 +4,8 @@ import ProductGallery from "@/components/ProductGallery";
 import MobileFooter from "@/components/MobileFooter";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import CategorySection from "@/components/CategorySection";
-import IsotelhaHighlightSection from "@/components/IsotelhaHighlightSection"; // Importando novo componente
+import IsotelhaHighlightSection from "@/components/IsotelhaHighlightSection"; 
+import FooterSecuritySeals from "@/components/FooterSecuritySeals"; // Importando o novo componente
 import { MadeWithDyad } from "@/components/made-with-dyad";
 
 const Index = () => {
@@ -30,6 +31,7 @@ const Index = () => {
       
       <WhatsAppButton />
       <MobileFooter />
+      <FooterSecuritySeals /> {/* Adicionando o selo */}
       <MadeWithDyad />
     </div>
   );
