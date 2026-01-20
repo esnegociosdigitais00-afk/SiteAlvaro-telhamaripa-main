@@ -1,5 +1,5 @@
 import React from 'react';
-import { Menu, Search, User, ShoppingCart, ChevronLeft } from 'lucide-react';
+import { Menu, Search, User, ChevronLeft } from 'lucide-react';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
@@ -25,11 +25,11 @@ const Logo = () => (
 
 // Componente da Barra de Busca
 const SearchBar = ({ className }: { className?: string }) => (
-  <div className={cn("relative flex-1 max-w-lg", className)}>
+  <div className={cn("relative flex-1 max-w-3xl", className)}>
     <Input
       type="text"
       placeholder="Buscar no site"
-      className="w-full rounded-full pl-4 pr-10 h-10 border-2 border-medium-blue focus:border-medium-blue/80 transition-all"
+      className="w-full rounded-full pl-4 pr-10 h-10 border-2 border-medium-blue focus:border-medium-blue/80 transition-all bg-gray-50"
     />
     <Search className="absolute right-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-medium-blue" />
   </div>
@@ -39,7 +39,6 @@ const SearchBar = ({ className }: { className?: string }) => (
 const MobileMenu = () => (
   <Sheet>
     <SheetTrigger asChild>
-      {/* O controle de visibilidade (lg:hidden) foi movido para o componente Header */}
       <Button variant="ghost" size="icon" className="rounded-full">
         <Menu className="h-6 w-6 text-dark-blue" />
       </Button>
@@ -56,7 +55,6 @@ const MobileMenu = () => (
         </div>
         <nav className="flex flex-col p-4 space-y-2">
           <Link to="/" className="py-2 px-3 rounded-lg hover:bg-gray-100 transition-colors">Início</Link>
-          {/* Categorias e Ofertas removidos */}
           <Link to="/contato" className="py-2 px-3 rounded-lg hover:bg-gray-100 transition-colors">Contato</Link>
         </nav>
       </div>
@@ -75,24 +73,20 @@ const Header = () => {
       {/* Barra Principal de Navegação e Busca */}
       <div className="container mx-auto px-4 py-3 flex items-center justify-between gap-4">
         
-        {/* 1. Logo (Canto Esquerdo) */}
-        <div className="flex-shrink-0">
+        {/* 1. Logo e Link Início (Esquerda) */}
+        <div className="flex items-center space-x-6 flex-shrink-0">
           <Logo />
+          {/* Link Início Desktop */}
+          <nav className="hidden lg:block text-dark-blue font-medium">
+            <Link to="/" className="hover:text-medium-blue transition-colors whitespace-nowrap">Início</Link>
+          </nav>
         </div>
 
-        {/* 2. Centro (Links de Navegação e Busca Desktop) */}
-        <div className="hidden lg:flex items-center flex-1 justify-start space-x-8">
-          {/* Links de Navegação */}
-          <nav className="space-x-6 text-dark-blue font-medium">
-            <Link to="/" className="hover:text-medium-blue transition-colors">Início</Link>
-            {/* Categorias e Ofertas removidos */}
-          </nav>
-          {/* Barra de Busca Desktop */}
-          <SearchBar className="flex-1 max-w-md" />
-        </div>
+        {/* 2. Centro (Barra de Busca Desktop) */}
+        <SearchBar className="hidden lg:flex flex-1 mx-8" />
 
         {/* 3. Ícones de Ação (Usuário e Menu Mobile) */}
-        <div className="flex items-center space-x-2">
+        <div className="flex items-center space-x-2 flex-shrink-0">
           {/* Ícone de Usuário (Desktop/Tablet) */}
           <Button variant="ghost" size="icon" className="rounded-full hidden sm:flex">
             <User className="h-6 w-6 text-dark-blue" />
@@ -102,8 +96,6 @@ const Header = () => {
           <div className="lg:hidden">
             <MobileMenu />
           </div>
-          
-          {/* Carrinho de compras removido */}
         </div>
       </div>
       
