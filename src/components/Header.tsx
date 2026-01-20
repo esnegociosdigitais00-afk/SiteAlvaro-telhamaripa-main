@@ -39,7 +39,8 @@ const SearchBar = ({ className }: { className?: string }) => (
 const MobileMenu = () => (
   <Sheet>
     <SheetTrigger asChild>
-      <Button variant="ghost" size="icon" className="rounded-full lg:hidden">
+      {/* O controle de visibilidade (lg:hidden) foi movido para o componente Header */}
+      <Button variant="ghost" size="icon" className="rounded-full">
         <Menu className="h-6 w-6 text-dark-blue" />
       </Button>
     </SheetTrigger>
@@ -75,38 +76,36 @@ const Header = () => {
       {/* Barra Principal de Navegação e Busca */}
       <div className="container mx-auto px-4 py-3 flex items-center justify-between gap-4">
         
-        {/* Menu Hambúrguer (Mobile) / Placeholder (Desktop) */}
-        <div className="flex items-center">
-          <MobileMenu />
-          {/* Menu Desktop (Links de navegação) */}
-          <nav className="hidden lg:flex space-x-6 text-dark-blue font-medium">
-            <Link to="/" className="hover:text-medium-blue transition-colors">Início</Link>
-            <Link to="/categorias" className="hover:text-medium-blue transition-colors">Categorias</Link>
-            <Link to="/ofertas" className="hover:text-medium-blue transition-colors">Ofertas</Link>
-          </nav>
-        </div>
-
-        {/* Logo Centralizada */}
+        {/* 1. Logo (Canto Esquerdo) */}
         <div className="flex-shrink-0">
           <Logo />
         </div>
 
-        {/* Barra de Busca (Desktop) */}
-        <SearchBar className="hidden lg:flex flex-1 mx-8" />
+        {/* 2. Centro (Links de Navegação e Busca Desktop) */}
+        <div className="hidden lg:flex items-center flex-1 justify-start space-x-8">
+          {/* Links de Navegação */}
+          <nav className="space-x-6 text-dark-blue font-medium">
+            <Link to="/" className="hover:text-medium-blue transition-colors">Início</Link>
+            <Link to="/categorias" className="hover:text-medium-blue transition-colors">Categorias</Link>
+            <Link to="/ofertas" className="hover:text-medium-blue transition-colors">Ofertas</Link>
+          </nav>
+          {/* Barra de Busca Desktop */}
+          <SearchBar className="flex-1 max-w-md" />
+        </div>
 
-        {/* Ícones de Ação (Usuário e Carrinho) */}
+        {/* 3. Ícones de Ação (Usuário e Menu Mobile) */}
         <div className="flex items-center space-x-2">
+          {/* Ícone de Usuário (Desktop/Tablet) */}
           <Button variant="ghost" size="icon" className="rounded-full hidden sm:flex">
             <User className="h-6 w-6 text-dark-blue" />
           </Button>
           
-          <Button variant="ghost" size="icon" className="rounded-full relative">
-            <ShoppingCart className="h-6 w-6 text-dark-blue" />
-            {/* Badge do Carrinho */}
-            <span className="absolute top-0 right-0 block h-4 w-4 rounded-full bg-red-600 text-white text-xs font-bold flex items-center justify-center transform translate-x-1 -translate-y-1">
-              0
-            </span>
-          </Button>
+          {/* Menu Hambúrguer (Mobile/Tablet) */}
+          <div className="lg:hidden">
+            <MobileMenu />
+          </div>
+          
+          {/* Carrinho de compras removido */}
         </div>
       </div>
       
