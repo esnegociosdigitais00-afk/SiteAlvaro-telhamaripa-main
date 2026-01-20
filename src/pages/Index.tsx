@@ -21,10 +21,10 @@ const Index = () => {
         {/* Seção de Destaque da Isotelha */}
         <IsotelhaHighlightSection />
 
-        {/* Adicionar mais conteúdo aqui, como categorias, informações da empresa, etc. */}
-        <div className="container mx-auto px-4 py-10">
-            <h2 className="text-xl font-semibold text-center text-gray-600">
-                Construindo o futuro, tijolo por tijolo.
+        {/* Slogan Final - Espaçamento reduzido (py-6) e estilização aprimorada */}
+        <div className="container mx-auto px-4 py-6">
+            <h2 className="text-2xl font-extrabold text-center text-dark-blue italic">
+                "Inovando o futuro, telha por telha."
             </h2>
         </div>
       </main>
