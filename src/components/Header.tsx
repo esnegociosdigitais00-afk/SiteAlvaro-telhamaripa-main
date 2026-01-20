@@ -56,8 +56,7 @@ const MobileMenu = () => (
         </div>
         <nav className="flex flex-col p-4 space-y-2">
           <Link to="/" className="py-2 px-3 rounded-lg hover:bg-gray-100 transition-colors">Início</Link>
-          <Link to="/categorias" className="py-2 px-3 rounded-lg hover:bg-gray-100 transition-colors">Categorias</Link>
-          <Link to="/ofertas" className="py-2 px-3 rounded-lg hover:bg-gray-100 transition-colors">Ofertas</Link>
+          {/* Categorias e Ofertas removidos */}
           <Link to="/contato" className="py-2 px-3 rounded-lg hover:bg-gray-100 transition-colors">Contato</Link>
         </nav>
       </div>
@@ -86,8 +85,7 @@ const Header = () => {
           {/* Links de Navegação */}
           <nav className="space-x-6 text-dark-blue font-medium">
             <Link to="/" className="hover:text-medium-blue transition-colors">Início</Link>
-            <Link to="/categorias" className="hover:text-medium-blue transition-colors">Categorias</Link>
-            <Link to="/ofertas" className="hover:text-medium-blue transition-colors">Ofertas</Link>
+            {/* Categorias e Ofertas removidos */}
           </nav>
           {/* Barra de Busca Desktop */}
           <SearchBar className="flex-1 max-w-md" />
