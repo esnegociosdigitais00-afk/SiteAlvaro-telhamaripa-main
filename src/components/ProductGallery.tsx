@@ -4,7 +4,8 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Scale, Heart, Share2, ArrowLeft, ArrowRight } from 'lucide-react';
 import { cn } from '@/lib/utils';
-import { Link } from 'react-router-dom'; // Importando Link
+import { Link } from 'react-router-dom';
+import { showSuccess, showError } from '@/utils/toast'; // Importando utilitários de toast
 
 interface Product {
   id: number;
@@ -23,39 +24,81 @@ const mockProducts: Product[] = [
   { id: 8, name: "Telha de Fibrocimento", image: "public/placeholder.svg" },
 ];
 
-const ProductCard = ({ product }: { product: Product }) => (
-  <Card className="w-[250px] flex-shrink-0 overflow-hidden rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300">
-    <div className="relative h-40 bg-gray-100 flex items-center justify-center">
-      {/* Imagem do Produto Placeholder */}
-      <img 
-        src={product.image} 
-        alt={product.name} 
-        className="h-24 w-24 object-contain opacity-50" 
-      />
-      <div className="absolute top-2 right-2 flex flex-col space-y-1">
-        <Button variant="ghost" size="icon" className="h-8 w-8 bg-white/80 hover:bg-white rounded-full shadow-md">
-          <Scale className="h-4 w-4 text-dark-blue" />
-        </Button>
-        <Button variant="ghost" size="icon" className="h-8 w-8 bg-white/80 hover:bg-white rounded-full shadow-md">
-          <Heart className="h-4 w-4 text-dark-blue" />
-        </Button>
-        <Button variant="ghost" size="icon" className="h-8 w-8 bg-white/80 hover:bg-white rounded-full shadow-md">
-          <Share2 className="h-4 w-4 text-dark-blue" />
-        </Button>
+const ProductCard = ({ product }: { product: Product }) => {
+  
+  const copyToClipboard = async (text: string) => {
+    try {
+      await navigator.clipboard.writeText(text);
+      showSuccess("Link do produto copiado para a área de transferência!");
+    } catch (err) {
+      showError("Falha ao copiar o link.");
+    }
+  };
+
+  const handleShare = async (e: React.MouseEvent) => {
+    e.preventDefault(); // Impede a navegação do Link pai
+    
+    const productUrl = `${window.location.origin}/produto/${product.id}`;
+    
+    if (navigator.share) {
+      try {
+        await navigator.share({
+          title: product.name,
+          text: `Confira este produto incrível: ${product.name}`,
+          url: productUrl,
+        });
+      } catch (error) {
+        // Se o usuário cancelou ou houve um erro que não seja AbortError, tenta copiar
+        if (error instanceof Error && error.name !== 'AbortError') {
+          showError("Não foi possível abrir o menu de compartilhamento. Copiando o link.");
+          await copyToClipboard(productUrl);
+        }
+      }
+    } else {
+      // Fallback: Copiar para a área de transferência
+      await copyToClipboard(productUrl);
+    }
+  };
+
+  return (
+    <Card className="w-[250px] flex-shrink-0 overflow-hidden rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300">
+      <div className="relative h-40 bg-gray-100 flex items-center justify-center">
+        {/* Imagem do Produto Placeholder */}
+        <img 
+          src={product.image} 
+          alt={product.name} 
+          className="h-24 w-24 object-contain opacity-50" 
+        />
+        <div className="absolute top-2 right-2 flex flex-col space-y-1">
+          <Button variant="ghost" size="icon" className="h-8 w-8 bg-white/80 hover:bg-white rounded-full shadow-md">
+            <Scale className="h-4 w-4 text-dark-blue" />
+          </Button>
+          <Button variant="ghost" size="icon" className="h-8 w-8 bg-white/80 hover:bg-white rounded-full shadow-md">
+            <Heart className="h-4 w-4 text-dark-blue" />
+          </Button>
+          <Button 
+            variant="ghost" 
+            size="icon" 
+            className="h-8 w-8 bg-white/80 hover:bg-white rounded-full shadow-md"
+            onClick={handleShare} // Adicionando a função de compartilhamento
+          >
+            <Share2 className="h-4 w-4 text-dark-blue" />
+          </Button>
+        </div>
       </div>
-    </div>
-    <CardContent className="p-4">
-      <h3 className="text-base font-semibold text-dark-blue truncate mb-2">
-        {product.name}
-      </h3>
-      <Link to={`/produto/${product.id}`}> {/* Usando Link para navegação */}
-        <Button className="w-full bg-medium-blue hover:bg-medium-blue/90 rounded-lg transition-colors">
-          Ver Detalhes
-        </Button>
-      </Link>
-    </CardContent>
-  </Card>
-);
+      <CardContent className="p-4">
+        <h3 className="text-base font-semibold text-dark-blue truncate mb-2">
+          {product.name}
+        </h3>
+        <Link to={`/produto/${product.id}`}> {/* Usando Link para navegação */}
+          <Button className="w-full bg-medium-blue hover:bg-medium-blue/90 rounded-lg transition-colors">
+            Ver Detalhes
+          </Button>
+        </Link>
+      </CardContent>
+    </Card>
+  );
+};
 
 const ProductGallery = () => {
   const options: EmblaOptionsType = {

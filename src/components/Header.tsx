@@ -25,7 +25,7 @@ const Logo = () => (
 
 // Componente da Barra de Busca
 const SearchBar = ({ className }: { className?: string }) => (
-  <div className={cn("relative flex-1 max-w-3xl", className)}>
+  <div className={cn("relative flex-1 max-w-xl", className)}> {/* Alterado de max-w-3xl para max-w-xl */}
     <Input
       type="text"
       placeholder="Buscar no site"
@@ -83,7 +83,8 @@ const Header = () => {
         </div>
 
         {/* 2. Centro (Barra de Busca Desktop) */}
-        <SearchBar className="hidden lg:flex flex-1 mx-8" />
+        {/* Removendo mx-8 para permitir que o flexbox centralize melhor o item menor */}
+        <SearchBar className="hidden lg:flex flex-1" /> 
 
         {/* 3. Ícones de Ação (Usuário e Menu Mobile) */}
         <div className="flex items-center space-x-2 flex-shrink-0">
