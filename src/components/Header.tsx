@@ -12,7 +12,7 @@ const Logo = () => (
     <img 
       src="/logo_isotelharj.png" 
       alt="Isotelhas RJ - Conforto que Protege" 
-      className="h-20 w-auto" // Aumentado para h-20
+      className="h-24 w-auto" // Aumentado para h-24
     />
   </Link>
 );
@@ -65,7 +65,7 @@ const Header = () => {
       </div>
 
       {/* Barra Principal de Navegação e Busca */}
-      <div className="container mx-auto px-4 py-3 flex items-center justify-between gap-4">
+      <div className="container mx-auto px-4 py-4 flex items-center justify-between gap-4">
         
         {/* 1. Logo e Link Início (Esquerda) */}
         <div className="flex items-center space-x-6 flex-shrink-0">
