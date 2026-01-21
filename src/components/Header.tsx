@@ -10,9 +10,9 @@ import { Link } from 'react-router-dom'; // Importando Link
 const Logo = () => (
   <Link to="/" className="flex items-center">
     <img 
-      src="/logo_isotelharj.png" 
+      src="/logo_isotelhas_rj_new.png" 
       alt="Isotelhas RJ - Conforto que Protege" 
-      className="h-[150px] w-auto" // Aumentado para 150px
+      className="h-[180px] w-auto" // Aumentado para 180px
     />
   </Link>
 );
