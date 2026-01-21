@@ -12,7 +12,7 @@ const Logo = () => (
     <img 
       src="/logo_isotelharj.png" 
       alt="Isotelhas RJ - Conforto que Protege" 
-      className="h-14 w-auto" // Aumentado de h-10 para h-14
+      className="h-10 w-auto" // Revertido para h-10
     />
   </Link>
 );
