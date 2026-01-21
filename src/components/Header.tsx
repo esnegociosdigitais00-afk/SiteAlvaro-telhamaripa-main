@@ -6,20 +6,14 @@ import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import { cn } from '@/lib/utils';
 import { Link } from 'react-router-dom'; // Importando Link
 
-// Componente do Logo (Leão Dourado e Texto Azul)
+// Componente do Logo (Usando a imagem fornecida)
 const Logo = () => (
-  <Link to="/" className="flex items-center space-x-1">
-    {/* Leão Dourado (Placeholder) */}
-    <span className="text-gold text-2xl font-serif">
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M12 1L15 5H9L12 1Z" fill="currentColor"/>
-        <path d="M18 6C18 9.31371 15.3137 12 12 12C8.68629 12 6 9.31371 6 6C6 2.68629 8.68629 0 12 0C15.3137 0 18 2.68629 18 6Z" fill="currentColor" transform="translate(3 10)"/>
-      </svg>
-    </span>
-    {/* Texto Azul */}
-    <span className="text-medium-blue font-extrabold text-xl tracking-tight">
-      CONSTRUÇÃO
-    </span>
+  <Link to="/" className="flex items-center">
+    <img 
+      src="/logo_isotelharj.png" 
+      alt="Isotelhas RJ - Conforto que Protege" 
+      className="h-10 w-auto" // Ajuste o tamanho conforme necessário
+    />
   </Link>
 );
 
