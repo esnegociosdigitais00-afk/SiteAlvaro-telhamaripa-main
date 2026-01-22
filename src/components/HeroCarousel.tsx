@@ -40,7 +40,8 @@ const HeroCarousel = () => {
   // Componente do Banner
   const BannerSlide = () => (
     <div className="relative flex-[0_0_100%] min-w-0 h-full"> 
-      <div className="bg-gradient-to-r from-medium-blue to-dark-blue rounded-none shadow-2xl overflow-hidden h-full flex flex-col lg:flex-row items-center justify-between p-6 md:p-10">
+      {/* Ajustando padding para p-4 em mobile */}
+      <div className="bg-gradient-to-r from-medium-blue to-dark-blue rounded-none shadow-2xl overflow-hidden h-full flex flex-col lg:flex-row items-center justify-between p-4 md:p-10">
         
         {/* Conteúdo de Texto e Preço */}
         <div className="text-white lg:w-1/2 space-y-2 text-center lg:text-left order-2 lg:order-1 mt-4 lg:mt-0">
@@ -98,7 +99,7 @@ const HeroCarousel = () => {
   );
 
   return (
-    <div className="relative w-full h-[300px] md:h-[450px] overflow-hidden">
+    <div className="relative w-full h-[250px] md:h-[450px] overflow-hidden">
       <div className="embla h-full" ref={emblaRef}>
         <div className="embla__container flex h-full">
           {/* Renderiza o mesmo slide 3 vezes para simular o carrossel */}
