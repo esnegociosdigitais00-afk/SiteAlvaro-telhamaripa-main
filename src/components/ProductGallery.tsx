@@ -61,7 +61,7 @@ const ProductCard = ({ product }: { product: Product }) => {
   };
 
   return (
-    <Card className="w-[250px] flex-shrink-0 overflow-hidden rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 group">
+    <Card className="w-full overflow-hidden rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 group">
       <div className="relative h-40 flex items-center justify-center p-2">
         {/* Imagem do Produto */}
         <img 
@@ -104,7 +104,6 @@ const ProductGallery = () => {
   const options: EmblaOptionsType = {
     loop: false,
     align: 'start',
-    // Mostrar 1 card em mobile, 2 em sm, 3 em md, 4 em lg
     slidesToScroll: 1,
   };
 
@@ -145,12 +144,9 @@ const ProductGallery = () => {
               {mockProducts.map((product) => (
                 <div 
                   key={product.id} 
-                  className="embla__slide pl-4"
-                  style={{ flex: '0 0 100%', minWidth: '100%' }} // Base mobile: 1 item
+                  className="embla__slide relative pl-4 basis-[80%] sm:basis-1/2 md:basis-1/3 lg:basis-1/4"
                 >
-                  <div className="sm:min-w-[calc(50%-1rem)] md:min-w-[calc(33.333%-1rem)] lg:min-w-[calc(25%-1rem)]">
-                    <ProductCard product={product} />
-                  </div>
+                  <ProductCard product={product} />
                 </div>
               ))}
             </div>
