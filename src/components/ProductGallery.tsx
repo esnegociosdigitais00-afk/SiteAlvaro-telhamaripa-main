@@ -1,11 +1,9 @@
 import React from 'react';
-import useEmblaCarousel, { EmblaOptionsType } from 'embla-carousel-react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Scale, Heart, Share2, ArrowLeft, ArrowRight } from 'lucide-react';
-import { cn } from '@/lib/utils';
+import { Scale, Heart, Share2 } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import { showSuccess, showError } from '@/utils/toast'; // Importando utilitários de toast
+import { showSuccess, showError } from '@/utils/toast';
 
 interface Product {
   id: number;
@@ -36,7 +34,7 @@ const ProductCard = ({ product }: { product: Product }) => {
   };
 
   const handleShare = async (e: React.MouseEvent) => {
-    e.preventDefault(); // Impede a navegação do Link pai
+    e.preventDefault();
     
     const productUrl = `${window.location.origin}/produto/${product.id}`;
     
@@ -48,14 +46,12 @@ const ProductCard = ({ product }: { product: Product }) => {
           url: productUrl,
         });
       } catch (error) {
-        // Se o usuário cancelou ou houve um erro que não seja AbortError, tenta copiar
         if (error instanceof Error && error.name !== 'AbortError') {
           showError("Não foi possível abrir o menu de compartilhamento. Copiando o link.");
           await copyToClipboard(productUrl);
         }
       }
     } else {
-      // Fallback: Copiar para a área de transferência
       await copyToClipboard(productUrl);
     }
   };
@@ -63,7 +59,6 @@ const ProductCard = ({ product }: { product: Product }) => {
   return (
     <Card className="w-full overflow-hidden rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 group">
       <div className="relative h-40 flex items-center justify-center p-2">
-        {/* Imagem do Produto */}
         <img 
           src={product.image} 
           alt={product.name} 
@@ -80,7 +75,7 @@ const ProductCard = ({ product }: { product: Product }) => {
             variant="ghost" 
             size="icon" 
             className="h-8 w-8 bg-white/80 hover:bg-white rounded-full shadow-md"
-            onClick={handleShare} // Adicionando a função de compartilhamento
+            onClick={handleShare}
           >
             <Share2 className="h-4 w-4 text-dark-blue" />
           </Button>
@@ -90,7 +85,7 @@ const ProductCard = ({ product }: { product: Product }) => {
         <h3 className="text-base font-semibold text-dark-blue h-12 flex items-center justify-center text-center mb-2">
           {product.name}
         </h3>
-        <Link to={`/produto/${product.id}`}> {/* Usando Link para navegação */}
+        <Link to={`/produto/${product.id}`}>
           <Button className="w-full bg-medium-blue hover:bg-medium-blue/90 rounded-lg transition-colors">
             Ver Detalhes
           </Button>
@@ -101,36 +96,6 @@ const ProductCard = ({ product }: { product: Product }) => {
 };
 
 const ProductGallery = () => {
-  const options: EmblaOptionsType = {
-    loop: false,
-    align: 'start',
-    slidesToScroll: 1,
-  };
-
-  const [emblaRef, emblaApi] = useEmblaCarousel(options);
-  const [prevBtnDisabled, setPrevBtnDisabled] = React.useState(true);
-  const [nextBtnDisabled, setNextBtnDisabled] = React.useState(true);
-  const [selectedIndex, setSelectedIndex] = React.useState(0);
-  const [scrollSnaps, setScrollSnaps] = React.useState<number[]>([]);
-
-  const scrollPrev = React.useCallback(() => emblaApi && emblaApi.scrollPrev(), [emblaApi]);
-  const scrollNext = React.useCallback(() => emblaApi && emblaApi.scrollNext(), [emblaApi]);
-  const scrollTo = React.useCallback((index: number) => emblaApi && emblaApi.scrollTo(index), [emblaApi]);
-
-  const onSelect = React.useCallback((emblaApi: any) => {
-    setSelectedIndex(emblaApi.selectedScrollSnap());
-    setPrevBtnDisabled(!emblaApi.canScrollPrev());
-    setNextBtnDisabled(!emblaApi.canScrollNext());
-  }, []);
-
-  React.useEffect(() => {
-    if (!emblaApi) return;
-    onSelect(emblaApi);
-    setScrollSnaps(emblaApi.scrollSnapList());
-    emblaApi.on('select', onSelect);
-    emblaApi.on('reInit', onSelect);
-  }, [emblaApi, onSelect]);
-
   return (
     <section className="py-10 bg-gray-50">
       <div className="container mx-auto px-4">
@@ -138,61 +103,9 @@ const ProductGallery = () => {
           Produtos em Destaque
         </h2>
         
-        <div className="relative">
-          <div className="embla overflow-hidden" ref={emblaRef}>
-            <div className="embla__container flex -ml-4"> {/* Margem negativa para compensar o padding/gap */}
-              {mockProducts.map((product) => (
-                <div 
-                  key={product.id} 
-                  className="embla__slide relative pl-4 basis-[80%] sm:basis-1/2 md:basis-1/3 lg:basis-1/4"
-                >
-                  <ProductCard product={product} />
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Botões de Navegação */}
-          <Button
-            variant="ghost"
-            size="icon"
-            className={cn(
-              "absolute left-0 top-1/2 transform -translate-y-1/2 z-10 bg-white/80 hover:bg-white rounded-full h-10 w-10 shadow-md transition-opacity",
-              prevBtnDisabled && "opacity-50 cursor-not-allowed"
-            )}
-            onClick={scrollPrev}
-            disabled={prevBtnDisabled}
-            aria-label="Anterior"
-          >
-            <ArrowLeft className="h-5 w-5 text-dark-blue" />
-          </Button>
-          <Button
-            variant="ghost"
-            size="icon"
-            className={cn(
-              "absolute right-0 top-1/2 transform -translate-y-1/2 z-10 bg-white/80 hover:bg-white rounded-full h-10 w-10 shadow-md transition-opacity",
-              nextBtnDisabled && "opacity-50 cursor-not-allowed"
-            )}
-            onClick={scrollNext}
-            disabled={nextBtnDisabled}
-            aria-label="Próximo"
-          >
-            <ArrowRight className="h-5 w-5 text-dark-blue" />
-          </Button>
-        </div>
-
-        {/* Indicadores (Dots) - Opcional, mas útil para navegação */}
-        <div className="flex justify-center mt-6 space-x-2">
-          {scrollSnaps.map((_, index) => (
-            <button
-              key={index}
-              className={cn(
-                "h-2 w-2 rounded-full transition-all duration-300",
-                index === selectedIndex ? "bg-medium-blue w-4" : "bg-gray-300 hover:bg-gray-400",
-              )}
-              onClick={() => scrollTo(index)}
-              aria-label={`Ir para o slide ${index + 1}`}
-            />
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+          {mockProducts.map((product) => (
+            <ProductCard key={product.id} product={product} />
           ))}
         </div>
       </div>
