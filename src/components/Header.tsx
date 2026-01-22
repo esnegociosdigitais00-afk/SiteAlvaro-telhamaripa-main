@@ -12,15 +12,15 @@ const Logo = () => (
     <img 
       src="/logo_isotelhas_rj_new.png" 
       alt="Isotelhas RJ - Conforto que Protege" 
-      // Logo responsivo: 80px em mobile, 120px em sm, 150px em lg
-      className="h-[80px] sm:h-[120px] lg:h-[150px] w-auto" 
+      // Logo pequeno para uma barra fina
+      className="h-10 w-auto" 
     />
   </Link>
 );
 
 // Componente da Barra de Busca
 const SearchBar = ({ className }: { className?: string }) => (
-  <div className={cn("relative flex-1 max-w-xl", className)}> {/* Alterado de max-w-3xl para max-w-xl */}
+  <div className={cn("relative flex-1 max-w-xl", className)}>
     <Input
       type="text"
       placeholder="Buscar no site"
@@ -66,7 +66,7 @@ const Header = () => {
       </div>
 
       {/* Barra Principal de Navegação e Busca */}
-      <div className="container mx-auto px-4 py-10 flex items-center justify-between gap-4">
+      <div className="container mx-auto px-4 py-3 flex items-center justify-between gap-4">
         
         {/* 1. Logo e Link Início (Esquerda) */}
         <div className="flex items-center space-x-6 flex-shrink-0">
@@ -78,7 +78,6 @@ const Header = () => {
         </div>
 
         {/* 2. Centro (Barra de Busca Desktop) */}
-        {/* Removendo mx-8 para permitir que o flexbox centralize melhor o item menor */}
         <SearchBar className="hidden lg:flex flex-1" /> 
 
         {/* 3. Ícones de Ação (Usuário e Menu Mobile) */}
