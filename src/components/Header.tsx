@@ -12,8 +12,8 @@ const Logo = () => (
     <img 
       src="/logo_isotelhas_rj_new.png" 
       alt="Isotelhas RJ - Conforto que Protege" 
-      // Logo maior (h-14) para preencher melhor o espaço
-      className="h-14 w-auto" 
+      // Logo beem maior (h-20)
+      className="h-20 w-auto" 
     />
   </Link>
 );
