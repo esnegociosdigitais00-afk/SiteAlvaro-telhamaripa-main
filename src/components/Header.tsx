@@ -10,7 +10,7 @@ import { Link } from 'react-router-dom'; // Importando Link
 const Logo = () => (
   <Link to="/" className="flex items-center">
     <img 
-      src="/logo_isotelhas_rj_new.png" 
+      src="/logo_isotelhas_rj_new_v2.png" 
       alt="Isotelhas RJ - Conforto que Protege" 
       // Logo no tamanho máximo (h-32)
       className="h-32 w-auto" 
