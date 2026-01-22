@@ -39,16 +39,15 @@ const HeroCarousel = () => {
 
   // Componente do Banner
   const BannerSlide = () => (
-    // Removendo o padding externo do slide (p-4 sm:p-8 lg:p-12)
     <div className="relative flex-[0_0_100%] min-w-0 h-full"> 
       <div className="bg-gradient-to-r from-medium-blue to-dark-blue rounded-none shadow-2xl overflow-hidden h-full flex flex-col lg:flex-row items-center justify-between p-6 md:p-10">
         
         {/* Conteúdo de Texto e Preço */}
-        <div className="text-white lg:w-1/2 space-y-3 text-center lg:text-left order-2 lg:order-1 mt-4 lg:mt-0">
-          <h2 className="text-2xl md:text-5xl font-extrabold tracking-tight leading-tight">
+        <div className="text-white lg:w-1/2 space-y-2 text-center lg:text-left order-2 lg:order-1 mt-4 lg:mt-0">
+          <h2 className="text-xl md:text-4xl font-extrabold tracking-tight leading-tight">
             {bannerData.title}
           </h2>
-          <p className="text-base font-semibold text-gold">
+          <p className="text-sm font-semibold text-gold">
             {bannerData.productName}
           </p>
           <p className="text-xs italic opacity-90">
@@ -57,10 +56,10 @@ const HeroCarousel = () => {
 
           {/* Preços */}
           <div className="flex flex-col items-center lg:items-start space-y-1 pt-1">
-            <span className="text-sm line-through opacity-70">
+            <span className="text-xs line-through opacity-70">
               {bannerData.priceOld}
             </span>
-            <span className="text-4xl md:text-6xl font-black text-gold drop-shadow-lg">
+            <span className="text-3xl md:text-5xl font-black text-gold drop-shadow-lg">
               {bannerData.priceNew}
             </span>
           </div>
@@ -82,11 +81,11 @@ const HeroCarousel = () => {
 
         {/* Imagem do Produto (Placeholder 3D) */}
         <div className="lg:w-1/2 flex justify-center order-1 lg:order-2">
-          <div className="relative w-full max-w-[150px] md:max-w-md lg:max-w-full aspect-square">
+          <div className="relative w-full max-w-[120px] md:max-w-sm lg:max-w-full aspect-square">
             {/* Simulação da Isotelha 3D */}
             <div className="absolute inset-0 flex items-center justify-center">
-                <div className="w-32 h-32 md:w-64 md:h-64 bg-gray-300 rounded-xl shadow-2xl transform rotate-12 skew-y-3 opacity-70"></div>
-                <div className="w-32 h-32 md:w-64 md:h-64 bg-red-700 rounded-xl shadow-2xl transform -rotate-6 skew-y-3 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 border-4 border-white">
+                <div className="w-24 h-24 md:w-48 md:h-48 bg-gray-300 rounded-xl shadow-2xl transform rotate-12 skew-y-3 opacity-70"></div>
+                <div className="w-24 h-24 md:w-48 md:h-48 bg-red-700 rounded-xl shadow-2xl transform -rotate-6 skew-y-3 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 border-4 border-white">
                     <div className="absolute bottom-0 left-0 right-0 bg-white/80 h-1/4 p-1 text-[10px] text-center text-gray-800 font-bold rounded-b-lg">
                         PIR 40mm
                     </div>
@@ -99,7 +98,7 @@ const HeroCarousel = () => {
   );
 
   return (
-    <div className="relative w-full h-[380px] md:h-[600px] overflow-hidden">
+    <div className="relative w-full h-[300px] md:h-[450px] overflow-hidden">
       <div className="embla h-full" ref={emblaRef}>
         <div className="embla__container flex h-full">
           {/* Renderiza o mesmo slide 3 vezes para simular o carrossel */}
@@ -113,28 +112,28 @@ const HeroCarousel = () => {
       <Button
         variant="ghost"
         size="icon"
-        className="absolute left-4 top-1/2 transform -translate-y-1/2 z-10 bg-white/50 hover:bg-white/80 rounded-full h-10 w-10 hidden md:flex"
+        className="absolute left-4 top-1/2 transform -translate-y-1/2 z-10 bg-white/50 hover:bg-white/80 rounded-full h-8 w-8 hidden md:flex"
         onClick={scrollPrev}
       >
-        <ArrowLeft className="h-5 w-5 text-dark-blue" />
+        <ArrowLeft className="h-4 w-4 text-dark-blue" />
       </Button>
       <Button
         variant="ghost"
         size="icon"
-        className="absolute right-4 top-1/2 transform -translate-y-1/2 z-10 bg-white/50 hover:bg-white/80 rounded-full h-10 w-10 hidden md:flex"
+        className="absolute right-4 top-1/2 transform -translate-y-1/2 z-10 bg-white/50 hover:bg-white/80 rounded-full h-8 w-8 hidden md:flex"
         onClick={scrollNext}
       >
-        <ArrowRight className="h-5 w-5 text-dark-blue" />
+        <ArrowRight className="h-4 w-4 text-dark-blue" />
       </Button>
 
       {/* Bolinhas Indicadoras */}
-      <div className="absolute bottom-8 left-0 right-0 flex justify-center space-x-2 z-10">
+      <div className="absolute bottom-4 left-0 right-0 flex justify-center space-x-2 z-10">
         {scrollSnaps.map((_, index) => (
           <button
             key={index}
             className={cn(
-              "h-3 w-3 rounded-full transition-all duration-300",
-              index === selectedIndex ? "bg-gold w-6" : "bg-white/70 hover:bg-white",
+              "h-2 w-2 rounded-full transition-all duration-300",
+              index === selectedIndex ? "bg-gold w-4" : "bg-white/70 hover:bg-white",
             )}
             onClick={() => scrollTo(index)}
             aria-label={`Ir para o slide ${index + 1}`}
