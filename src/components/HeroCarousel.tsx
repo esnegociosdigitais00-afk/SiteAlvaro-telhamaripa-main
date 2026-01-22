@@ -43,36 +43,36 @@ const HeroCarousel = () => {
       <div className="bg-gradient-to-r from-medium-blue to-dark-blue rounded-3xl shadow-2xl overflow-hidden h-full flex flex-col lg:flex-row items-center justify-between p-6 md:p-10">
         
         {/* Conteúdo de Texto e Preço */}
-        <div className="text-white lg:w-1/2 space-y-4 text-center lg:text-left order-2 lg:order-1 mt-6 lg:mt-0">
-          <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight leading-tight">
+        <div className="text-white lg:w-1/2 space-y-3 text-center lg:text-left order-2 lg:order-1 mt-4 lg:mt-0">
+          <h2 className="text-2xl md:text-5xl font-extrabold tracking-tight leading-tight">
             {bannerData.title}
           </h2>
-          <p className="text-lg font-semibold text-gold">
+          <p className="text-base font-semibold text-gold">
             {bannerData.productName}
           </p>
-          <p className="text-sm italic opacity-90">
+          <p className="text-xs italic opacity-90">
             {bannerData.specs}
           </p>
 
           {/* Preços */}
-          <div className="flex flex-col items-center lg:items-start space-y-1 pt-2">
-            <span className="text-lg line-through opacity-70">
+          <div className="flex flex-col items-center lg:items-start space-y-1 pt-1">
+            <span className="text-sm line-through opacity-70">
               {bannerData.priceOld}
             </span>
-            <span className="text-5xl md:text-6xl font-black text-gold drop-shadow-lg">
+            <span className="text-4xl md:text-6xl font-black text-gold drop-shadow-lg">
               {bannerData.priceNew}
             </span>
           </div>
           
           {/* Texto Legal e Selos */}
-          <p className="text-xs font-light pt-2 border-t border-white/30 mt-4">
+          <p className="text-[10px] font-light pt-1 border-t border-white/30 mt-2">
             {bannerData.legalText}
           </p>
           
-          <div className="flex justify-center lg:justify-start space-x-4 pt-4">
+          <div className="flex justify-center lg:justify-start space-x-3 pt-3">
             {bannerData.seals.map((seal, index) => (
-              <div key={index} className="flex items-center space-x-1 text-xs font-bold text-gold bg-white/10 px-2 py-1 rounded-full">
-                <seal.icon className="h-4 w-4" />
+              <div key={index} className="flex items-center space-x-1 text-[10px] font-bold text-gold bg-white/10 px-2 py-1 rounded-full">
+                <seal.icon className="h-3 w-3" />
                 <span>{seal.text}</span>
               </div>
             ))}
@@ -81,12 +81,12 @@ const HeroCarousel = () => {
 
         {/* Imagem do Produto (Placeholder 3D) */}
         <div className="lg:w-1/2 flex justify-center order-1 lg:order-2">
-          <div className="relative w-full max-w-xs md:max-w-md lg:max-w-full aspect-square">
+          <div className="relative w-full max-w-[150px] md:max-w-md lg:max-w-full aspect-square">
             {/* Simulação da Isotelha 3D */}
             <div className="absolute inset-0 flex items-center justify-center">
-                <div className="w-48 h-48 md:w-64 md:h-64 bg-gray-300 rounded-xl shadow-2xl transform rotate-12 skew-y-3 opacity-70"></div>
-                <div className="w-48 h-48 md:w-64 md:h-64 bg-red-700 rounded-xl shadow-2xl transform -rotate-6 skew-y-3 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 border-4 border-white">
-                    <div className="absolute bottom-0 left-0 right-0 bg-white/80 h-1/4 p-1 text-xs text-center text-gray-800 font-bold rounded-b-lg">
+                <div className="w-32 h-32 md:w-64 md:h-64 bg-gray-300 rounded-xl shadow-2xl transform rotate-12 skew-y-3 opacity-70"></div>
+                <div className="w-32 h-32 md:w-64 md:h-64 bg-red-700 rounded-xl shadow-2xl transform -rotate-6 skew-y-3 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 border-4 border-white">
+                    <div className="absolute bottom-0 left-0 right-0 bg-white/80 h-1/4 p-1 text-[10px] text-center text-gray-800 font-bold rounded-b-lg">
                         PIR 40mm
                     </div>
                 </div>
@@ -98,7 +98,7 @@ const HeroCarousel = () => {
   );
 
   return (
-    <div className="relative w-full h-[500px] md:h-[600px] overflow-hidden">
+    <div className="relative w-full h-[380px] md:h-[600px] overflow-hidden">
       <div className="embla h-full" ref={emblaRef}>
         <div className="embla__container flex h-full">
           {/* Renderiza o mesmo slide 3 vezes para simular o carrossel */}
