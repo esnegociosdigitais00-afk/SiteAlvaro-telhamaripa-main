@@ -22,7 +22,7 @@ const CategoryCard: React.FC<{ category: Category }> = ({ category }) => {
       to={`/categoria/${category.slug}`}
       className="flex flex-col items-center text-center group transition-all duration-300 transform hover:scale-[1.02] hover:shadow-lg p-2 rounded-xl cursor-pointer h-full justify-start"
     >
-      <div className="w-32 h-32 md:w-36 md:h-36 bg-[#f3f4f6] rounded-full flex items-center justify-center mb-3 transition-colors group-hover:bg-[#e5e7eb] shadow-md p-2">
+      <div className="w-32 h-32 md:w-40 md:h-40 bg-[#f3f4f6] rounded-full flex items-center justify-center mb-3 transition-colors group-hover:bg-[#e5e7eb] shadow-md p-2">
         {/* Imagem da Categoria */}
         <img 
           src={category.image} 
