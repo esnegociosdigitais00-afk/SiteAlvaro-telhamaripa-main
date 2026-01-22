@@ -12,7 +12,8 @@ const Logo = () => (
     <img 
       src="/logo_isotelhas_rj_new.png" 
       alt="Isotelhas RJ - Conforto que Protege" 
-      className="h-[350px] w-auto" // Aumentado para 350px
+      // Logo responsivo: 100px em mobile, 150px em sm, 350px em lg
+      className="h-[100px] sm:h-[150px] lg:h-[350px] w-auto" 
     />
   </Link>
 );
@@ -65,7 +66,7 @@ const Header = () => {
       </div>
 
       {/* Barra Principal de Navegação e Busca */}
-      <div className="container mx-auto px-4 py-2 flex items-center justify-between gap-4">
+      <div className="container mx-auto px-4 py-1 flex items-center justify-between gap-4">
         
         {/* 1. Logo e Link Início (Esquerda) */}
         <div className="flex items-center space-x-6 flex-shrink-0">
