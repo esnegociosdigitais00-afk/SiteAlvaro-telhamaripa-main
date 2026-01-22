@@ -45,11 +45,11 @@ const HeroCarousel = () => {
       <div className="embla h-full" ref={emblaRef}>
         <div className="embla__container flex h-full">
           {currentBanners.map((banner, index) => (
-            <div key={index} className="relative flex-[0_0_100%] min-w-0 h-full">
+            <div key={index} className="relative flex-[0_0_100%] min-w-0 h-full bg-white">
               <img
                 src={banner.src}
                 alt={banner.alt}
-                className="w-full h-full object-cover"
+                className="w-full h-full object-contain"
               />
             </div>
           ))}
