@@ -11,8 +11,8 @@ interface Category {
 
 const categories: Category[] = [
   { name: "Telha Térmica trapezoidal Confort", slug: "telha-termica-trapezoidal-confort", image: "/isotelha-trapezoidal.png" },
-  { name: "Telha Metálica Sanduiche", slug: "telha-metalica-sanduiche", image: "public/placeholder.svg" },
-  { name: "Calhas e rufos", slug: "calhas-e-rufos", image: "public/placeholder.svg" },
+  { name: "Telha Metálica Sanduiche", slug: "telha-metalica-sanduiche", image: "/telha-metalica-sanduiche.png" },
+  { name: "Calhas e rufos", slug: "calhas-e-rufos", image: "/calhas-e-rufos.png" },
 ];
 
 const CategoryCard: React.FC<{ category: Category }> = ({ category }) => {
