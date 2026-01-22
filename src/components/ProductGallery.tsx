@@ -14,7 +14,7 @@ interface Product {
 const mockProducts: Product[] = [
   { id: 1, name: "Isotelha Trapezoidal Térmica Galvalume natural SEM FORRO– núcleo em PIR 30 mm", image: "/isotelha-sem-forro.png" },
   { id: 2, name: "Isotelha Trapezoidal Térmica cor Branca SEM FORRO– núcleo em PIR 30 mm", image: "/isotelha-branca-sem-forro.png" },
-  { id: 3, name: "Painel Termoacústico", image: "public/placeholder.svg" },
+  { id: 3, name: "Isotelha Trapezoidal Térmica Galvalume Natural com Forro cor Branco Neve - Núcleo em PIR 30 mm", image: "/isotelha-com-forro-natural-principal.png" },
   { id: 4, name: "Blocos de Concreto Celular", image: "public/placeholder.svg" },
   { id: 5, name: "Manta Asfáltica", image: "public/placeholder.svg" },
   { id: 6, name: "Cimento CP V", image: "public/placeholder.svg" },
@@ -56,6 +56,41 @@ const ProductCard = ({ product }: { product: Product }) => {
     }
   };
 
+  const renderProductName = () => {
+    if (product.id === 1) {
+      return (
+        <span>
+          {product.name.split('Galvalume natural')[0]}
+          <span className="text-medium-blue">Galvalume natural</span>
+          {product.name.split('Galvalume natural')[1]}
+        </span>
+      );
+    }
+    if (product.id === 2) {
+      return (
+        <span>
+          {product.name.split('cor Branca')[0]}
+          <span className="text-medium-blue">cor Branca</span>
+          {product.name.split('cor Branca')[1]}
+        </span>
+      );
+    }
+    if (product.id === 3) {
+      const parts = product.name.split('Galvalume Natural');
+      const finalParts = parts[1].split('cor Branco Neve');
+      return (
+        <span>
+          {parts[0]}
+          <span className="text-medium-blue">Galvalume Natural</span>
+          {finalParts[0]}
+          <span className="text-medium-blue">cor Branco Neve</span>
+          {finalParts[1]}
+        </span>
+      );
+    }
+    return product.name;
+  };
+
   return (
     <Card className="w-full flex flex-col overflow-hidden rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 group">
       <div className="relative h-40 flex items-center justify-center p-2">
@@ -83,21 +118,7 @@ const ProductCard = ({ product }: { product: Product }) => {
       </div>
       <CardContent className="p-4 flex flex-col flex-grow">
         <h3 className="text-base font-semibold text-gray-900 h-12 flex items-center justify-center text-center mb-4">
-          {product.id === 1 ? (
-            <span>
-              {product.name.split('Galvalume natural')[0]}
-              <span className="text-medium-blue">Galvalume natural</span>
-              {product.name.split('Galvalume natural')[1]}
-            </span>
-          ) : product.id === 2 ? (
-            <span>
-              {product.name.split('cor Branca')[0]}
-              <span className="text-medium-blue">cor Branca</span>
-              {product.name.split('cor Branca')[1]}
-            </span>
-          ) : (
-            product.name
-          )}
+          {renderProductName()}
         </h3>
         <div className="mt-auto">
           <Link to={`/produto/${product.id}`}>

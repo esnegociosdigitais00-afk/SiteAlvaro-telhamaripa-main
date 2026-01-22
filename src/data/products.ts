@@ -52,5 +52,26 @@ export const products: Product[] = [
       "Excelente isolamento térmico",
       "Material retardante a chamas",
     ]
+  },
+  {
+    id: 3,
+    name: "Isotelha Trapezoidal Térmica Galvalume Natural com Forro cor Branco Neve - Núcleo em PIR 30 mm",
+    ref: "0001823",
+    category: "Telhas Térmicas",
+    categorySlug: "telha-metalica-sanduiche",
+    descriptionShort: "A ISOTELHA Trapezoidal é indicada para uma variedade de ambientes, como comércios, indústrias, residências, sítios e templos religiosos. Projetada para oferecer conforto térmico e eficiência energética, esta telha conta com três camadas estratégicas: a externa, em aço galvalume natural, que proporciona durabilidade; a intermediária, composta por espuma de PIR, para isolamento térmico eficaz; e a inferior, em forro de aço pintado na cor Branca, eliminando a necessidade de forros tradicionais. A ISOTELHA Trapezoidal é uma escolha prática e funcional para transformar seus espaços.",
+    images: [
+      "/isotelha-com-forro-natural-principal.png",
+      "/isotelha-com-forro-natural-details-1.png",
+      "/isotelha-com-forro-natural-details-2.png"
+    ],
+    specs: [
+      "Núcleo isolante em PIR de 30mm",
+      "Modelo Trapezoidal",
+      "Face superior em aço galvalume natural",
+      "Face inferior com forro em aço pré-pintado (Branco Neve)",
+      "Dispensa o uso de forro tradicional",
+      "Excelente isolamento térmico",
+    ]
   }
 ];

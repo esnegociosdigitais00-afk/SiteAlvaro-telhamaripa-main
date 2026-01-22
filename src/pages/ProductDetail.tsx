@@ -83,6 +83,41 @@ const ProductDetail = () => {
     return <Navigate to="/404" replace />;
   }
 
+  const renderProductName = () => {
+    if (product.id === 1) {
+      return (
+        <span>
+          {product.name.split('Galvalume natural')[0]}
+          <span className="text-medium-blue">Galvalume natural</span>
+          {product.name.split('Galvalume natural')[1]}
+        </span>
+      );
+    }
+    if (product.id === 2) {
+      return (
+        <span>
+          {product.name.split('cor Branca')[0]}
+          <span className="text-medium-blue">cor Branca</span>
+          {product.name.split('cor Branca')[1]}
+        </span>
+      );
+    }
+    if (product.id === 3) {
+      const parts = product.name.split('Galvalume Natural');
+      const finalParts = parts[1].split('cor Branco Neve');
+      return (
+        <span>
+          {parts[0]}
+          <span className="text-medium-blue">Galvalume Natural</span>
+          {finalParts[0]}
+          <span className="text-medium-blue">cor Branco Neve</span>
+          {finalParts[1]}
+        </span>
+      );
+    }
+    return product.name;
+  };
+
   return (
     <div className="min-h-screen flex flex-col">
       <Header />
@@ -104,21 +139,7 @@ const ProductDetail = () => {
             {/* Informações do Produto */}
             <div className="space-y-2">
               <h1 className="text-3xl md:text-4xl font-extrabold text-gray-900 leading-tight">
-                {product.id === 1 ? (
-                  <span>
-                    {product.name.split('Galvalume natural')[0]}
-                    <span className="text-medium-blue">Galvalume natural</span>
-                    {product.name.split('Galvalume natural')[1]}
-                  </span>
-                ) : product.id === 2 ? (
-                  <span>
-                    {product.name.split('cor Branca')[0]}
-                    <span className="text-medium-blue">cor Branca</span>
-                    {product.name.split('cor Branca')[1]}
-                  </span>
-                ) : (
-                  product.name
-                )}
+                {renderProductName()}
               </h1>
               <p className="text-sm text-gray-500 font-medium">
                 REF: {product.ref}
