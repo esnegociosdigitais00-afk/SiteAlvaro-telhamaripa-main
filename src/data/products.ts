@@ -13,7 +13,7 @@ export interface Product {
 export const products: Product[] = [
   {
     id: 1,
-    name: "Isotelha Trapezoidal Térmica Galvalume SEM FORRO– núcleo em PIR 30 mm",
+    name: "Isotelha Trapezoidal Térmica Galvalume natural SEM FORRO– núcleo em PIR 30 mm",
     ref: "0001821",
     category: "Telhas Térmicas",
     categorySlug: "telha-termica-trapezoidal-confort",
@@ -34,7 +34,7 @@ export const products: Product[] = [
   },
   {
     id: 2,
-    name: "Isotelha Trapezoidal Térmica Branca SEM FORRO– núcleo em PIR 30 mm",
+    name: "Isotelha Trapezoidal Térmica cor Branca SEM FORRO– núcleo em PIR 30 mm",
     ref: "0001822",
     category: "Telhas Térmicas",
     categorySlug: "telha-termica-trapezoidal-confort",

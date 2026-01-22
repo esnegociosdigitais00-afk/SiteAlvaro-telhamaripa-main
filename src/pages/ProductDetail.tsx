@@ -103,8 +103,22 @@ const ProductDetail = () => {
             
             {/* Informações do Produto */}
             <div className="space-y-2">
-              <h1 className="text-3xl md:text-4xl font-extrabold text-dark-blue leading-tight">
-                {product.name}
+              <h1 className="text-3xl md:text-4xl font-extrabold text-gray-900 leading-tight">
+                {product.id === 1 ? (
+                  <span>
+                    {product.name.split('Galvalume natural')[0]}
+                    <span className="text-medium-blue">Galvalume natural</span>
+                    {product.name.split('Galvalume natural')[1]}
+                  </span>
+                ) : product.id === 2 ? (
+                  <span>
+                    {product.name.split('cor Branca')[0]}
+                    <span className="text-medium-blue">cor Branca</span>
+                    {product.name.split('cor Branca')[1]}
+                  </span>
+                ) : (
+                  product.name
+                )}
               </h1>
               <p className="text-sm text-gray-500 font-medium">
                 REF: {product.ref}
