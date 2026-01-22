@@ -14,7 +14,7 @@ const Index = () => {
       <Header />
       
       <main className="flex-grow pb-16 md:pb-0"> {/* Padding bottom para compensar o MobileFooter */}
-        <div>
+        <div className="lg:-mt-4">
           <HeroCarousel />
         </div>
         <CategorySection />
