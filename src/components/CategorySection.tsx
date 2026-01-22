@@ -9,12 +9,9 @@ interface Category {
 }
 
 const categories: Category[] = [
-  { name: "Isotelha Trapezoidal", slug: "isotelha-trapezoidal" },
-  { name: "Isotelha Colonial", slug: "isotelha-colonial" },
-  { name: "Painel", slug: "painel" },
-  { name: "Blocos", slug: "blocos" },
-  { name: "Lajotas", slug: "lajotas" },
-  { name: "Telha de Fibrocimento", slug: "telha-fibrocimento" },
+  { name: "Telha Térmica trapezoidal Confort", slug: "telha-termica-trapezoidal-confort" },
+  { name: "Telha Metálica Sanduiche", slug: "telha-metalica-sanduiche" },
+  { name: "Calhas e rufos", slug: "calhas-e-rufos" },
 ];
 
 const CategoryCard: React.FC<{ category: Category }> = ({ category }) => {
@@ -49,21 +46,21 @@ const CategorySection: React.FC = () => {
         </h2>
         
         {isMobile ? (
-          // Mobile: Horizontal scroll (2.5 cards visible)
+          // Mobile: Horizontal scroll
           <div className="flex overflow-x-auto space-x-4 pb-2">
             {categories.map((category) => (
               <div 
                 key={category.slug} 
-                // w-[40%] ensures 2.5 items are visible on a standard mobile screen
-                className="flex-shrink-0 w-[40%] sm:w-[30%]" 
+                // Ajustando a largura para se adequar melhor a 3 itens
+                className="flex-shrink-0 w-[45%] sm:w-[30%]" 
               >
                 <CategoryCard category={category} />
               </div>
             ))}
           </div>
         ) : (
-          // Desktop/Tablet: Grid layout
-          <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-6 gap-4 md:gap-6 lg:gap-8 justify-items-center">
+          // Desktop/Tablet: Grid layout para 3 colunas
+          <div className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-3 gap-4 md:gap-6 lg:gap-8 justify-items-center">
             {categories.map((category) => (
               <CategoryCard key={category.slug} category={category} />
             ))}
