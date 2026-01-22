@@ -6,12 +6,13 @@ import { useIsMobile } from '@/hooks/use-mobile';
 interface Category {
   name: string;
   slug: string;
+  image: string;
 }
 
 const categories: Category[] = [
-  { name: "Telha Térmica trapezoidal Confort", slug: "telha-termica-trapezoidal-confort" },
-  { name: "Telha Metálica Sanduiche", slug: "telha-metalica-sanduiche" },
-  { name: "Calhas e rufos", slug: "calhas-e-rufos" },
+  { name: "Telha Térmica trapezoidal Confort", slug: "telha-termica-trapezoidal-confort", image: "/isotelha-trapezoidal.png" },
+  { name: "Telha Metálica Sanduiche", slug: "telha-metalica-sanduiche", image: "public/placeholder.svg" },
+  { name: "Calhas e rufos", slug: "calhas-e-rufos", image: "public/placeholder.svg" },
 ];
 
 const CategoryCard: React.FC<{ category: Category }> = ({ category }) => {
@@ -20,12 +21,12 @@ const CategoryCard: React.FC<{ category: Category }> = ({ category }) => {
       to={`/categoria/${category.slug}`}
       className="flex flex-col items-center text-center group transition-all duration-300 transform hover:scale-[1.02] hover:shadow-lg p-2 rounded-xl cursor-pointer h-full justify-start"
     >
-      <div className="w-28 h-28 md:w-32 md:h-32 bg-[#f3f4f6] rounded-full flex items-center justify-center mb-3 transition-colors group-hover:bg-[#e5e7eb] shadow-md">
-        {/* Placeholder de Imagem */}
+      <div className="w-28 h-28 md:w-32 md:h-32 bg-[#f3f4f6] rounded-full flex items-center justify-center mb-3 transition-colors group-hover:bg-[#e5e7eb] shadow-md p-2">
+        {/* Imagem da Categoria */}
         <img 
-          src="public/placeholder.svg" 
+          src={category.image} 
           alt={category.name} 
-          className="w-1/2 h-1/2 object-contain opacity-70" 
+          className="w-full h-full object-contain" 
         />
       </div>
       <span className="text-sm md:text-base font-medium text-[#1f2937] px-1">
