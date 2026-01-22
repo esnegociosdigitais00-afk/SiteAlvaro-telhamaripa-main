@@ -4,7 +4,7 @@ import { Button } from '@/components/ui/button';
 
 const WhatsAppButton = () => {
   // Placeholder para o link do WhatsApp
-  const whatsappLink = "https://wa.me/5511999999999"; 
+  const whatsappLink = "https://wa.me/5521967343475"; 
 
   return (
     <a 

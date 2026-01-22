@@ -57,7 +57,7 @@ const Breadcrumb = ({ product }: { product: typeof mockProduct }) => (
 );
 
 const WhatsAppCtaButton = ({ productName, productRef }: { productName: string, productRef: string }) => {
-  const whatsappNumber = "5511999999999"; // Usando placeholder, mas você pode usar o 0800 747 1001
+  const whatsappNumber = "5521967343475";
   const message = encodeURIComponent(`Olá! Gostaria de solicitar um orçamento para: ${productName} - Ref: ${productRef}`);
   const whatsappLink = `https://wa.me/${whatsappNumber}?text=${message}`;
 
