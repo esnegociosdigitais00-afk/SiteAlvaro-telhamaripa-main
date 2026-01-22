@@ -12,8 +12,8 @@ interface Product {
 }
 
 const mockProducts: Product[] = [
-  { id: 1, name: "Isotelha Trapezoidal Térmica Sanduíche Galvalume SEM FORRO– núcleo em PIR 30 mm", image: "/isotelha-sem-forro.png" },
-  { id: 2, name: "Isotelha Trapezoidal Térmica Sanduíche Branca SEM FORRO– núcleo em PIR 30 mm", image: "/isotelha-branca-sem-forro.png" },
+  { id: 1, name: "Isotelha Trapezoidal Térmica Galvalume SEM FORRO– núcleo em PIR 30 mm", image: "/isotelha-sem-forro.png" },
+  { id: 2, name: "Isotelha Trapezoidal Térmica Branca SEM FORRO– núcleo em PIR 30 mm", image: "/isotelha-branca-sem-forro.png" },
   { id: 3, name: "Painel Termoacústico", image: "public/placeholder.svg" },
   { id: 4, name: "Blocos de Concreto Celular", image: "public/placeholder.svg" },
   { id: 5, name: "Manta Asfáltica", image: "public/placeholder.svg" },
