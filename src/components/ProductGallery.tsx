@@ -14,7 +14,7 @@ interface Product {
 }
 
 const mockProducts: Product[] = [
-  { id: 1, name: "Isotelha Trapezoidal", image: "public/placeholder.svg" },
+  { id: 1, name: "Isotelha Trapezoidal Térmica Sanduíche Galvalume SEM FORRO– núcleo em PIR 30 mm", image: "/isotelha-sem-forro.png" },
   { id: 2, name: "Isotelha Colonial", image: "public/placeholder.svg" },
   { id: 3, name: "Painel Termoacústico", image: "public/placeholder.svg" },
   { id: 4, name: "Blocos de Concreto Celular", image: "public/placeholder.svg" },
@@ -61,13 +61,13 @@ const ProductCard = ({ product }: { product: Product }) => {
   };
 
   return (
-    <Card className="w-[250px] flex-shrink-0 overflow-hidden rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300">
-      <div className="relative h-40 bg-gray-100 flex items-center justify-center">
-        {/* Imagem do Produto Placeholder */}
+    <Card className="w-[250px] flex-shrink-0 overflow-hidden rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 group">
+      <div className="relative h-40 flex items-center justify-center p-2">
+        {/* Imagem do Produto */}
         <img 
           src={product.image} 
           alt={product.name} 
-          className="h-24 w-24 object-contain opacity-50" 
+          className="h-full w-full object-contain group-hover:scale-105 transition-transform duration-300" 
         />
         <div className="absolute top-2 right-2 flex flex-col space-y-1">
           <Button variant="ghost" size="icon" className="h-8 w-8 bg-white/80 hover:bg-white rounded-full shadow-md">
@@ -87,7 +87,7 @@ const ProductCard = ({ product }: { product: Product }) => {
         </div>
       </div>
       <CardContent className="p-4">
-        <h3 className="text-base font-semibold text-dark-blue truncate mb-2">
+        <h3 className="text-base font-semibold text-dark-blue h-12 flex items-center justify-center text-center mb-2">
           {product.name}
         </h3>
         <Link to={`/produto/${product.id}`}> {/* Usando Link para navegação */}
