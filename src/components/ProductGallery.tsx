@@ -57,7 +57,7 @@ const ProductCard = ({ product }: { product: Product }) => {
   };
 
   return (
-    <Card className="w-full overflow-hidden rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 group">
+    <Card className="w-full flex flex-col overflow-hidden rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 group">
       <div className="relative h-40 flex items-center justify-center p-2">
         <img 
           src={product.image} 
@@ -81,15 +81,17 @@ const ProductCard = ({ product }: { product: Product }) => {
           </Button>
         </div>
       </div>
-      <CardContent className="p-4">
-        <h3 className="text-base font-semibold text-dark-blue h-12 flex items-center justify-center text-center mb-2">
+      <CardContent className="p-4 flex flex-col flex-grow">
+        <h3 className="text-base font-semibold text-dark-blue h-12 flex items-center justify-center text-center mb-4">
           {product.name}
         </h3>
-        <Link to={`/produto/${product.id}`}>
-          <Button className="w-full bg-medium-blue hover:bg-medium-blue/90 rounded-lg transition-colors">
-            Ver Detalhes
-          </Button>
-        </Link>
+        <div className="mt-auto">
+          <Link to={`/produto/${product.id}`}>
+            <Button className="w-full bg-medium-blue hover:bg-medium-blue/90 rounded-lg transition-colors">
+              Ver Detalhes
+            </Button>
+          </Link>
+        </div>
       </CardContent>
     </Card>
   );
@@ -103,7 +105,7 @@ const ProductGallery = () => {
           Produtos em Destaque
         </h2>
         
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
           {mockProducts.map((product) => (
             <ProductCard key={product.id} product={product} />
           ))}
