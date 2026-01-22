@@ -13,27 +13,28 @@ import FooterSecuritySeals from '@/components/FooterSecuritySeals'; // Importand
 import { MadeWithDyad } from '@/components/made-with-dyad';
 import { useIsMobile } from '@/hooks/use-mobile';
 
-// --- Mock Data ---
+// --- Mock Data Sincronizado com a Home ---
 const mockProduct = {
   id: 1,
-  name: "Isotelha Colonial com Isolamento em PIR",
-  ref: "0001820",
-  category: "Telhas",
-  descriptionShort: "A Isotelha Colonial oferece excelente isolamento térmico e acústico, combinando a estética tradicional da telha colonial com a eficiência moderna do núcleo em PIR.",
-  descriptionLong: "Ideal para projetos residenciais e comerciais que buscam conforto e economia de energia. Sua instalação é rápida e o material é leve e resistente. Disponível em diversas cores e acabamentos, garantindo durabilidade e beleza para sua obra. O núcleo em PIR (Poliisocianurato) é autoextinguível e possui alto poder isolante.",
+  name: "Isotelha Trapezoidal Térmica Sanduíche Galvalume SEM FORRO– núcleo em PIR 30 mm",
+  ref: "0001821",
+  category: "Telhas Térmicas",
+  descriptionShort: "A Isotelha Trapezoidal Sanduíche SEM FORRO é a solução ideal para coberturas que exigem alto desempenho térmico e acústico com um acabamento interno mais simples. Com núcleo isolante em PIR de 30mm, garante eficiência energética e conforto.",
+  descriptionLong: "Projetada para galpões, indústrias e comércios, esta telha combina a resistência do aço galvalume com o poder isolante do PIR (Poliisocianurato). O modelo sem forro é uma opção econômica que não abre mão da qualidade e do isolamento. O núcleo em PIR é retardante a chamas, oferecendo maior segurança para sua construção. A instalação é prática e rápida, otimizando o tempo da sua obra.",
   images: [
-    "public/placeholder.svg",
-    "public/placeholder.svg",
-    "public/placeholder.svg",
-    "public/placeholder.svg",
-    "public/placeholder.svg",
+    "/isotelha-sem-forro.png",
+    "/isotelha-sem-forro.png",
+    "/isotelha-sem-forro.png",
+    "/isotelha-sem-forro.png",
+    "/isotelha-sem-forro.png",
   ],
   specs: [
-    "Núcleo isolante em PIR de 40mm",
-    "Face superior em aço galvalume (Terracota ou Marfim)",
-    "Face inferior com forro em aço pré-pintado Branco",
-    "Alta resistência mecânica e durabilidade",
-    "Redução de até 90% da transferência de calor",
+    "Núcleo isolante em PIR de 30mm",
+    "Modelo Trapezoidal Sanduíche",
+    "Face superior em aço galvalume",
+    "Sem forro na face inferior (acabamento simples)",
+    "Excelente isolamento térmico e acústico",
+    "Material retardante a chamas",
   ]
 };
 
