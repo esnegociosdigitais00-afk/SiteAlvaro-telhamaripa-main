@@ -62,7 +62,7 @@ const Header = () => {
     <header className="sticky top-0 z-50 bg-white shadow-md">
       {/* Barra Superior de Vendas */}
       <div className="bg-dark-blue text-white text-center py-2 text-sm font-medium">
-        Vendas: 0800 747 1001
+        Vendas: (21) 9 6734-3475
       </div>
 
       {/* Barra Principal de Navegação e Busca */}
