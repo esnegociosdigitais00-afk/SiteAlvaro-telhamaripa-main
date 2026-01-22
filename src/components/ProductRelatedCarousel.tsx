@@ -12,13 +12,13 @@ interface Product {
   image: string;
 }
 
-// Mock data (usando os mesmos produtos de destaque)
+// Mock data para Calhas e Rufos
 const mockProducts: Product[] = [
-  { id: 1, name: "Isotelha Trapezoidal", image: "public/placeholder.svg" },
-  { id: 2, name: "Isotelha Colonial", image: "public/placeholder.svg" },
-  { id: 3, name: "Painel Termoacústico", image: "public/placeholder.svg" },
-  { id: 4, name: "Blocos de Concreto Celular", image: "public/placeholder.svg" },
-  { id: 5, name: "Manta Asfáltica", image: "public/placeholder.svg" },
+  { id: 101, name: "Calha Pluvial", image: "/calhas-e-rufos.png" },
+  { id: 102, name: "Rufo de Encosto", image: "/calhas-e-rufos.png" },
+  { id: 103, name: "Rufo Pingadeira", image: "/calhas-e-rufos.png" },
+  { id: 104, name: "Condutor Retangular", image: "/calhas-e-rufos.png" },
+  { id: 105, name: "Bocal para Condutor", image: "/calhas-e-rufos.png" },
 ];
 
 const RelatedProductCard = ({ product }: { product: Product }) => (

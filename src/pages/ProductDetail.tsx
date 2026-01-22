@@ -5,11 +5,9 @@ import Header from '@/components/Header';
 import MobileFooter from '@/components/MobileFooter';
 import WhatsAppButton from '@/components/WhatsAppButton';
 import { Button } from '@/components/ui/button';
-import { cn } from '@/lib/utils';
 import ProductImageGallery from '@/components/ProductImageGallery';
 import ProductRelatedCarousel from '@/components/ProductRelatedCarousel';
-import ProductFullDescriptionSection from '@/components/ProductFullDescriptionSection'; 
-import FooterSecuritySeals from '@/components/FooterSecuritySeals'; // Importando o novo componente
+import FooterSecuritySeals from '@/components/FooterSecuritySeals';
 import { MadeWithDyad } from '@/components/made-with-dyad';
 import { useIsMobile } from '@/hooks/use-mobile';
 
@@ -19,7 +17,7 @@ const mockProduct = {
   name: "Isotelha Trapezoidal Térmica Sanduíche Galvalume SEM FORRO– núcleo em PIR 30 mm",
   ref: "0001821",
   category: "Telhas Térmicas",
-  descriptionShort: "A Isotelha Trapezoidal Sanduíche SEM FORRO é a solução ideal para coberturas que exigem alto desempenho térmico e acústico com um acabamento interno mais simples. Com núcleo isolante em PIR de 30mm, garante eficiência energética e conforto.",
+  descriptionShort: "A Telha Confort Trapezoidal Sanduíche Sem Forro é composta por duas camadas desenvolvidas para oferecer desempenho e conforto térmico. A camada externa, em aço Galvalume natural, proporciona proteção contra as intempéries, enquanto a camada intermediária, em espuma rígida de PIR, contribui para a estabilidade térmica interna e para a redução do consumo de energia. A face inferior é revestida com filme de alumínio, que não substitui um forro tradicional, sendo indicada para locais que já possuam outro tipo de acabamento, como laje ou rebaixamento de gesso.",
   descriptionLong: "Projetada para galpões, indústrias e comércios, esta telha combina a resistência do aço galvalume com o poder isolante do PIR (Poliisocianurato). O modelo sem forro é uma opção econômica que não abre mão da qualidade e do isolamento. O núcleo em PIR é retardante a chamas, oferecendo maior segurança para sua construção. A instalação é prática e rápida, otimizando o tempo da sua obra.",
   images: [
     "/isotelha-sem-forro.png",
@@ -71,14 +69,9 @@ const WhatsAppCtaButton = ({ productName, productRef }: { productName: string, p
 };
 
 const ProductDescription = ({ product }: { product: typeof mockProduct }) => {
-  // Removendo a lógica de expansão, pois a descrição completa será exibida em uma seção separada abaixo.
   return (
     <div className="text-gray-700 text-base space-y-3">
       <p>{product.descriptionShort}</p>
-      {/* Adicionando um link para a seção completa, se necessário, ou apenas mantendo o resumo */}
-      <a href="#descricao-completa" className="text-medium-blue hover:text-dark-blue font-medium text-sm block mt-2">
-        Leia a descrição completa abaixo
-      </a>
     </div>
   );
 };
@@ -146,13 +139,10 @@ const ProductDetail = () => {
           </div>
         </div>
         
-        {/* Seção de Descrição Completa (Full Width) */}
-        <ProductFullDescriptionSection description={product.descriptionLong} />
-
         {/* Produtos Relacionados */}
         <section className="mt-12">
           <h2 className="text-2xl md:text-3xl font-bold text-dark-blue mb-6 border-b-4 border-gold inline-block pb-1">
-            Produtos Relacionados
+            Complete seu projeto: Calhas e Rufos
           </h2>
           <ProductRelatedCarousel />
         </section>
@@ -167,7 +157,7 @@ const ProductDetail = () => {
 
       <WhatsAppButton />
       <MobileFooter />
-      <FooterSecuritySeals /> {/* Adicionando o selo */}
+      <FooterSecuritySeals />
       <MadeWithDyad />
     </div>
   );
