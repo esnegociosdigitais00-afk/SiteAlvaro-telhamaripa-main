@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useParams, Navigate } from 'react-router-dom';
 import { Home, ChevronRight, MessageCircle, CheckCircle } from 'lucide-react';
 import Header from '@/components/Header';
 import MobileFooter from '@/components/MobileFooter';
@@ -10,40 +10,18 @@ import ProductRelatedCarousel from '@/components/ProductRelatedCarousel';
 import FooterSecuritySeals from '@/components/FooterSecuritySeals';
 import { MadeWithDyad } from '@/components/made-with-dyad';
 import { useIsMobile } from '@/hooks/use-mobile';
-
-// --- Mock Data Sincronizado com a Home ---
-const mockProduct = {
-  id: 1,
-  name: "Isotelha Trapezoidal Térmica Sanduíche Galvalume SEM FORRO– núcleo em PIR 30 mm",
-  ref: "0001821",
-  category: "Telhas Térmicas",
-  descriptionShort: "A Telha Confort Trapezoidal Sanduíche Sem Forro é composta por duas camadas desenvolvidas para oferecer desempenho e conforto térmico. A camada externa, em aço Galvalume natural, proporciona proteção contra as intempéries, enquanto a camada intermediária, em espuma rígida de PIR, contribui para a estabilidade térmica interna e para a redução do consumo de energia. A face inferior é revestida com filme de alumínio, que não substitui um forro tradicional, sendo indicada para locais que já possuam outro tipo de acabamento, como laje ou rebaixamento de gesso.",
-  descriptionLong: "Projetada para galpões, indústrias e comércios, esta telha combina a resistência do aço galvalume com o poder isolante do PIR (Poliisocianurato). O modelo sem forro é uma opção econômica que não abre mão da qualidade e do isolamento. O núcleo em PIR é retardante a chamas, oferecendo maior segurança para sua construção. A instalação é prática e rápida, otimizando o tempo da sua obra.",
-  images: [
-    "/isotelha-sem-forro.png",
-    "/isotelha-sem-forro-details-1.png",
-    "/isotelha-sem-forro-details-2.png"
-  ],
-  specs: [
-    "Núcleo isolante em PIR de 30mm",
-    "Modelo Trapezoidal Sanduíche",
-    "Face superior em aço galvalume",
-    "Sem forro na face inferior (acabamento simples)",
-    "Excelente isolamento térmico e acústico",
-    "Material retardante a chamas",
-  ]
-};
+import { products, Product } from '@/data/products';
 
 // --- Components ---
 
-const Breadcrumb = ({ product }: { product: typeof mockProduct }) => (
+const Breadcrumb = ({ product }: { product: Product }) => (
   <nav className="flex items-center text-sm text-gray-500 py-4">
     <Link to="/" className="hover:text-medium-blue transition-colors flex items-center">
       <Home className="h-4 w-4 mr-1" />
       Início
     </Link>
     <ChevronRight className="h-4 w-4 mx-2" />
-    <Link to={`/category/${product.category.toLowerCase()}`} className="hover:text-medium-blue transition-colors">
+    <Link to={`/categoria/${product.categorySlug}`} className="hover:text-medium-blue transition-colors">
       {product.category}
     </Link>
     <ChevronRight className="h-4 w-4 mx-2" />
@@ -70,7 +48,7 @@ const WhatsAppCtaButton = ({ productName, productRef }: { productName: string, p
   );
 };
 
-const ProductDescription = ({ product }: { product: typeof mockProduct }) => {
+const ProductDescription = ({ product }: { product: Product }) => {
   return (
     <div className="text-gray-700 text-base space-y-3">
       <p>{product.descriptionShort}</p>
@@ -97,8 +75,13 @@ const TechnicalSpecs = ({ specs }: { specs: string[] }) => (
 // --- Main Page Component ---
 
 const ProductDetail = () => {
-  const product = mockProduct;
+  const { id } = useParams<{ id: string }>();
+  const product = products.find(p => p.id === Number(id));
   const isMobile = useIsMobile();
+
+  if (!product) {
+    return <Navigate to="/404" replace />;
+  }
 
   return (
     <div className="min-h-screen flex flex-col">
@@ -110,12 +93,12 @@ const ProductDetail = () => {
         {/* Layout Principal */}
         <div className="grid lg:grid-cols-5 gap-8 lg:gap-12 mt-4">
           
-          {/* Coluna Esquerda (Galeria de Imagens) - 40% em desktop */}
+          {/* Coluna Esquerda (Galeria de Imagens) */}
           <div className="lg:col-span-2">
             <ProductImageGallery images={product.images} productName={product.name} />
           </div>
 
-          {/* Coluna Direita (Detalhes e CTA) - 60% em desktop */}
+          {/* Coluna Direita (Detalhes e CTA) */}
           <div className="lg:col-span-3 space-y-6">
             
             {/* Informações do Produto */}
