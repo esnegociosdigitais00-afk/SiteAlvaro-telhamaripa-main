@@ -12,8 +12,8 @@ const Logo = () => (
     <img 
       src="/logo_isotelhas_rj_new_v2.png" 
       alt="Isotelhas RJ - Conforto que Protege" 
-      // Logo no tamanho máximo (h-32)
-      className="h-32 w-auto" 
+      // Logo com altura reduzida para diminuir o espaço
+      className="h-20 w-auto" 
     />
   </Link>
 );
@@ -95,7 +95,7 @@ const Header = () => {
       </div>
       
       {/* Barra de Busca (Mobile) */}
-      <div className="lg:hidden px-4 pb-0">
+      <div className="lg:hidden px-4 pb-4">
         <SearchBar />
       </div>
     </header>
