@@ -21,6 +21,8 @@ const mockProduct = {
   descriptionLong: "Projetada para galpões, indústrias e comércios, esta telha combina a resistência do aço galvalume com o poder isolante do PIR (Poliisocianurato). O modelo sem forro é uma opção econômica que não abre mão da qualidade e do isolamento. O núcleo em PIR é retardante a chamas, oferecendo maior segurança para sua construção. A instalação é prática e rápida, otimizando o tempo da sua obra.",
   images: [
     "/isotelha-sem-forro.png",
+    "/isotelha-sem-forro-details-1.png",
+    "/isotelha-sem-forro-details-2.png"
   ],
   specs: [
     "Núcleo isolante em PIR de 30mm",
