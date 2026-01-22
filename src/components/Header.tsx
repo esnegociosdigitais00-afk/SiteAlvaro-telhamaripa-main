@@ -68,17 +68,19 @@ const Header = () => {
       {/* Barra Principal de Navegação e Busca */}
       <div className="px-4 py-0 flex items-center justify-between gap-4">
         
-        {/* 1. Logo e Link Início (Esquerda) */}
-        <div className="flex items-center space-x-6 flex-shrink-0">
+        {/* 1. Logo (Esquerda) */}
+        <div className="flex items-center flex-shrink-0">
           <Logo />
-          {/* Link Início Desktop */}
-          <nav className="hidden lg:block text-dark-blue font-medium">
-            <Link to="/" className="hover:text-medium-blue transition-colors whitespace-nowrap">Início</Link>
-          </nav>
         </div>
 
-        {/* 2. Centro (Barra de Busca Desktop) */}
-        <SearchBar className="hidden lg:flex flex-1" /> 
+        {/* 2. Centro (Início e Barra de Busca Desktop) */}
+        <div className="hidden lg:flex flex-1 items-center justify-center gap-8">
+          {/* Link Início Desktop */}
+          <nav className="text-dark-blue font-medium">
+            <Link to="/" className="hover:text-medium-blue transition-colors whitespace-nowrap">Início</Link>
+          </nav>
+          <SearchBar />
+        </div>
 
         {/* 3. Ícones de Ação (Usuário e Menu Mobile) */}
         <div className="flex items-center space-x-2 flex-shrink-0">
