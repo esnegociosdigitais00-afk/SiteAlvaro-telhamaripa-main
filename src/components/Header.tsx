@@ -12,8 +12,8 @@ const Logo = () => (
     <img 
       src="/logo_isotelhas_rj_new_v2.png" 
       alt="Isotelhas RJ - Conforto que Protege" 
-      // Altura responsiva: h-20 em mobile, h-12 em telas grandes para aproximar o banner ao máximo
-      className="h-20 lg:h-12 w-auto" 
+      // Altura responsiva: h-20 em mobile, h-16 em telas grandes para um logo maior
+      className="h-20 lg:h-16 w-auto" 
     />
   </Link>
 );
