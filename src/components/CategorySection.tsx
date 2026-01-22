@@ -13,6 +13,7 @@ const categories: Category[] = [
   { name: "Telha Térmica trapezoidal Confort", slug: "telha-termica-trapezoidal-confort", image: "/isotelha-trapezoidal.png" },
   { name: "Telha Metálica Sanduiche", slug: "telha-metalica-sanduiche", image: "/telha-metalica-sanduiche.png" },
   { name: "Calhas e rufos", slug: "calhas-e-rufos", image: "/calhas-e-rufos.png" },
+  { name: "Telha Galvalume Simples trapezoidal", slug: "telha-galvalume-simples-trapezoidal", image: "/telha-galvalume-simples.png" },
 ];
 
 const CategoryCard: React.FC<{ category: Category }> = ({ category }) => {
@@ -60,8 +61,8 @@ const CategorySection: React.FC = () => {
             ))}
           </div>
         ) : (
-          // Desktop/Tablet: Grid layout para 3 colunas
-          <div className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-3 gap-4 md:gap-6 lg:gap-8 justify-items-center">
+          // Desktop/Tablet: Grid layout para 4 colunas
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 lg:gap-8 justify-items-center">
             {categories.map((category) => (
               <CategoryCard key={category.slug} category={category} />
             ))}
