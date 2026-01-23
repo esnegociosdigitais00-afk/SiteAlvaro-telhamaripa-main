@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, useParams, Navigate } from 'react-router-dom';
-import { Home, ChevronRight, MessageCircle, CheckCircle } from 'lucide-react';
+import { Home, ChevronRight, CheckCircle } from 'lucide-react';
 import Header from '@/components/Header';
 import MobileFooter from '@/components/MobileFooter';
 import WhatsAppButton from '@/components/WhatsAppButton';
@@ -11,6 +11,7 @@ import FooterSecuritySeals from '@/components/FooterSecuritySeals';
 import { MadeWithDyad } from '@/components/made-with-dyad';
 import { useIsMobile } from '@/hooks/use-mobile';
 import { products, Product } from '@/data/products';
+import WhatsAppIcon from '@/components/WhatsAppIcon';
 
 // --- Components ---
 
@@ -39,9 +40,9 @@ const WhatsAppCtaButton = ({ productName, productRef }: { productName: string, p
   return (
     <a href={whatsappLink} target="_blank" rel="noopener noreferrer" className="w-full block">
       <Button 
-        className="w-full h-14 text-lg font-bold bg-green-500 hover:bg-green-600 rounded-xl shadow-lg transition-colors"
+        className="w-full h-14 text-lg font-bold bg-green-500 hover:bg-green-600 rounded-xl shadow-lg transition-colors text-white"
       >
-        <MessageCircle className="h-6 w-6 mr-3 fill-white" />
+        <WhatsAppIcon className="h-6 w-6 mr-3" />
         ORÇAR VIA WHATSAPP
       </Button>
     </a>
