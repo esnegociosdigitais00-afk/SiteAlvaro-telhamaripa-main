@@ -1,8 +1,13 @@
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import WhatsAppIcon from './WhatsAppIcon';
+import { cn } from '@/lib/utils';
 
-const WhatsAppButton = () => {
+interface WhatsAppButtonProps {
+  isProductPage?: boolean;
+}
+
+const WhatsAppButton = ({ isProductPage = false }: WhatsAppButtonProps) => {
   const whatsappLink = "https://wa.me/5521967343475"; 
 
   return (
@@ -10,7 +15,12 @@ const WhatsAppButton = () => {
       href={whatsappLink} 
       target="_blank" 
       rel="noopener noreferrer"
-      className="fixed bottom-6 right-6 z-50 transition-transform duration-300 hover:scale-105 group"
+      className={cn(
+        "fixed right-6 z-50 transition-transform duration-300 hover:scale-105 group",
+        isProductPage 
+          ? "bottom-28 md:bottom-6" 
+          : "bottom-20 md:bottom-6"
+      )}
     >
       <Button 
         className="w-14 h-14 rounded-full bg-green-500 hover:bg-green-600 shadow-xl p-0 relative overflow-hidden"

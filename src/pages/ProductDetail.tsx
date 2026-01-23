@@ -2,7 +2,6 @@ import React from 'react';
 import { Link, useParams, Navigate } from 'react-router-dom';
 import { Home, ChevronRight, CheckCircle } from 'lucide-react';
 import Header from '@/components/Header';
-import MobileFooter from '@/components/MobileFooter';
 import WhatsAppButton from '@/components/WhatsAppButton';
 import { Button } from '@/components/ui/button';
 import ProductImageGallery from '@/components/ProductImageGallery';
@@ -212,8 +211,7 @@ const ProductDetail = () => {
         </div>
       )}
 
-      <WhatsAppButton />
-      <MobileFooter />
+      <WhatsAppButton isProductPage />
       <FooterSecuritySeals />
       <MadeWithDyad />
     </div>
