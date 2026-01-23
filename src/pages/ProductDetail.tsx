@@ -96,9 +96,9 @@ const ProductDetail = () => {
     if (product.id === 2) {
       return (
         <span>
-          {product.name.split('cor Branca')[0]}
-          <span className="text-medium-blue">cor Branca</span>
-          {product.name.split('cor Branca')[1]}
+          {product.name.split('cor Branco neve')[0]}
+          <span className="text-medium-blue">cor Branco neve</span>
+          {product.name.split('cor Branco neve')[1]}
         </span>
       );
     }
@@ -116,14 +116,14 @@ const ProductDetail = () => {
       );
     }
     if (product.id === 4) {
-      const parts = product.name.split('Cor Branco neve');
-      const finalParts = parts[1].split('forro Branco neve');
+      const parts = product.name.split('Cor branco neve');
+      const finalParts = parts[1].split('forro branco neve');
       return (
         <span>
           {parts[0]}
-          <span className="text-medium-blue">Cor Branco neve</span>
+          <span className="text-medium-blue">Cor branco neve</span>
           {finalParts[0]}
-          <span className="text-medium-blue">forro Branco neve</span>
+          <span className="text-medium-blue">forro branco neve</span>
           {finalParts[1]}
         </span>
       );
