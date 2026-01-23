@@ -4,6 +4,7 @@ import { Button } from '@/components/ui/button';
 import { Scale, Heart, Share2 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { showSuccess, showError } from '@/utils/toast';
+import { cn } from '@/lib/utils';
 
 interface ProductForCard {
   id: number;
@@ -106,6 +107,8 @@ const ProductCard = ({ product }: { product: ProductForCard }) => {
     return product.name;
   };
 
+  const isIsotelha = product.name.toLowerCase().startsWith('isotelha');
+
   return (
     <Card className="w-full flex flex-col overflow-hidden rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 group">
       <div className="relative h-40 flex items-center justify-center p-2">
@@ -132,7 +135,10 @@ const ProductCard = ({ product }: { product: ProductForCard }) => {
         </div>
       </div>
       <CardContent className="p-4 flex flex-col flex-grow justify-between">
-        <h3 className="text-base font-semibold text-gray-900 text-center mb-4">
+        <h3 className={cn(
+          "text-base font-semibold text-gray-900 text-center mb-4",
+          isIsotelha && "-mt-4"
+        )}>
           {renderProductName()}
         </h3>
         <div>
