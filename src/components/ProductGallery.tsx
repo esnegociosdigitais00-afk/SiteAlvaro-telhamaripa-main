@@ -35,9 +35,19 @@ const CarouselRow = ({ products: rowProducts }: { products: typeof products }) =
 const ProductGallery = () => {
   const isMobile = useIsMobile();
 
-  // Separa os produtos em duas fileiras
-  const topRowProducts = products.filter((_, index) => index % 2 === 0);
-  const bottomRowProducts = products.filter((_, index) => index % 2 !== 0);
+  // Ordena os produtos para que "Isotelha" venha primeiro
+  const sortedProducts = [...products].sort((a, b) => {
+    const aIsIsotelha = a.name.toLowerCase().startsWith('isotelha');
+    const bIsIsotelha = b.name.toLowerCase().startsWith('isotelha');
+
+    if (aIsIsotelha && !bIsIsotelha) return -1;
+    if (!aIsIsotelha && bIsIsotelha) return 1;
+    return 0;
+  });
+
+  // Separa os produtos ordenados em duas fileiras para mobile
+  const topRowProducts = sortedProducts.filter((_, index) => index % 2 === 0);
+  const bottomRowProducts = sortedProducts.filter((_, index) => index % 2 !== 0);
 
   return (
     <section className="py-10 bg-gray-50">
@@ -55,7 +65,7 @@ const ProductGallery = () => {
         ) : (
           // Layout de Grid para Desktop
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
-            {products.map((product) => (
+            {sortedProducts.map((product) => (
               <ProductCard key={product.id} product={{
                 id: product.id,
                 name: product.name,
