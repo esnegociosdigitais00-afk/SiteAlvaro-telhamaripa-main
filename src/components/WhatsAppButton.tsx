@@ -29,7 +29,7 @@ const WhatsAppButton = () => {
         className="w-14 h-14 rounded-full bg-green-500 hover:bg-green-600 shadow-xl p-0 relative overflow-hidden"
         aria-label="Fale conosco pelo WhatsApp"
       >
-        <WhatsAppIcon className="h-7 w-7 text-white" />
+        <WhatsAppIcon className="h-8 w-8 text-white" />
       </Button>
       
       {/* CTA para desktop/telas maiores */}
