@@ -131,8 +131,8 @@ const ProductCard = ({ product }: { product: ProductForCard }) => {
           </Button>
         </div>
       </div>
-      <CardContent className="p-4 flex flex-col flex-grow">
-        <h3 className="text-base font-semibold text-gray-900 text-center mb-4 flex-grow flex flex-col justify-center">
+      <CardContent className="p-4 flex flex-col flex-grow justify-between">
+        <h3 className="text-base font-semibold text-gray-900 text-center mb-4">
           {renderProductName()}
         </h3>
         <div>
