@@ -20,6 +20,7 @@ const mockProducts: Product[] = [
   { id: 6, name: "Telha Galvalume Simples TP-40 Trapezoidal", image: "/telha-galvalume-simples-tp40.png" },
   { id: 7, name: "Telha Térmica Sanduiche (EPS)", image: "/telha-termica-sanduiche-eps.png" },
   { id: 8, name: "Calha Galvanizada", image: "/calha-galvanizada.png" },
+  { id: 9, name: "Rufo Galvanizado", image: "/rufo-galvanizado.png" },
 ];
 
 const ProductCard = ({ product }: { product: Product }) => {

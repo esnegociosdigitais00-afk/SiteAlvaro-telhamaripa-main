@@ -171,5 +171,24 @@ export const products: Product[] = [
       "Fácil instalação e baixa manutenção",
       "Disponível em diversos tamanhos (sob consulta)",
     ]
+  },
+  {
+    id: 9,
+    name: "Rufo Galvanizado",
+    ref: "0001829",
+    category: "Calhas e Rufos",
+    categorySlug: "calhas-e-rufos",
+    descriptionShort: "O Rufo Galvanizado é a peça-chave para a vedação e proteção de encontros entre telhados e paredes, evitando infiltrações e garantindo um acabamento impecável. Produzido com aço galvanizado de alta resistência, ele protege contra a ação da chuva e do tempo, aumentando a vida útil da sua cobertura e paredes. É a solução definitiva para a segurança e estética da sua obra.",
+    images: [
+      "/rufo-galvanizado.png"
+    ],
+    specs: [
+      "Material: Aço Galvanizado de alta durabilidade",
+      "Proteção superior contra infiltrações",
+      "Ideal para vedação de paredes e telhados",
+      "Acabamento profissional para a sua obra",
+      "Resistente à corrosão e intempéries",
+      "Fabricado sob medida para seu projeto (sob consulta)",
+    ]
   }
 ];
