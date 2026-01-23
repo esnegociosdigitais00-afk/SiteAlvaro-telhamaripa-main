@@ -18,4 +18,4 @@ jobs:
           username: ${{ secrets.USUARIO_FTP }}
           password: ${{ secrets.FTP_SENHA }}
           local-dir: ./dist/
-          server-dir: ../isotelharj.com.br/
+          server-dir: ./../
