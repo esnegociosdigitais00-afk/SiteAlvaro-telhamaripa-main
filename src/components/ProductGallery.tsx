@@ -12,8 +12,8 @@ interface Product {
 }
 
 const mockProducts: Product[] = [
-  { id: 1, name: "Isotelha Trapezoidal Térmica Galvalume natural SEM FORRO– núcleo em PIR 30 mm", image: "/isotelha-sem-forro.png" },
-  { id: 2, name: "Isotelha Trapezoidal Térmica cor Branca SEM FORRO– núcleo em PIR 30 mm", image: "/isotelha-branca-sem-forro.png" },
+  { id: 1, name: "Isotelha Trapezoidal Térmica Galvalume natural SEM FORRO - núcleo em PIR 30 mm", image: "/isotelha-sem-forro.png" },
+  { id: 2, name: "Isotelha Trapezoidal Térmica cor Branca SEM FORRO - núcleo em PIR 30 mm", image: "/isotelha-branca-sem-forro.png" },
   { id: 3, name: "Isotelha Trapezoidal Térmica Galvalume Natural com Forro cor Branco Neve - Núcleo em PIR 30 mm", image: "/isotelha-com-forro-natural-principal.png" },
   { id: 4, name: "Isotelha Trapezoidal Térmica-Cor branco neve com forro branco neve - Nucleo em PIR 30 mm", image: "/isotelha-branca-com-forro-principal.png" },
   { id: 5, name: "Manta Asfáltica", image: "public/placeholder.svg" },
