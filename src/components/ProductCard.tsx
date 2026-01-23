@@ -17,8 +17,7 @@ const ProductCard = ({ product }: { product: ProductForCard }) => {
     try {
       await navigator.clipboard.writeText(text);
       showSuccess("Link do produto copiado para a área de transferência!");
-    } catch (err) {
-      showError("Falha ao copiar o link.");
+    } catch (err)      showError("Falha ao copiar o link.");
     }
   };
 
@@ -132,10 +131,10 @@ const ProductCard = ({ product }: { product: ProductForCard }) => {
         </div>
       </div>
       <CardContent className="p-4 flex flex-col flex-grow">
-        <h3 className="text-base font-semibold text-gray-900 h-20 flex items-center justify-center text-center mb-2">
+        <h3 className="text-base font-semibold text-gray-900 text-center mb-4 flex-grow flex flex-col justify-center">
           {renderProductName()}
         </h3>
-        <div className="mt-auto">
+        <div>
           <Link to={`/produto/${product.id}`}>
             <Button className="w-full bg-medium-blue hover:bg-medium-blue/90 rounded-lg transition-colors">
               Ver Detalhes
