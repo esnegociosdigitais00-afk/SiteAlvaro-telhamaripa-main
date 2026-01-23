@@ -195,10 +195,10 @@ const ProductDetail = () => {
         {/* Produtos Relacionados */}
         <section className="mt-12">
           <h2 className="text-2xl md:text-3xl font-bold text-dark-blue mb-6 border-b-4 border-gold inline-block pb-1">
-            Complete seu projeto: {product.category}
+            Complete seu projeto: Calhas e Rufos
           </h2>
           <ProductRelatedCarousel 
-            categorySlug={product.categorySlug} 
+            categorySlug="calhas-e-rufos" 
             currentProductId={product.id} 
           />
         </section>
