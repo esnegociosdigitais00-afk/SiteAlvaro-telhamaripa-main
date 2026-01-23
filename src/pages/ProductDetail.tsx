@@ -115,6 +115,19 @@ const ProductDetail = () => {
         </span>
       );
     }
+    if (product.id === 4) {
+      const parts = product.name.split('Cor branco neve');
+      const finalParts = parts[1].split('forro branco neve');
+      return (
+        <span>
+          {parts[0]}
+          <span className="text-medium-blue">Cor branco neve</span>
+          {finalParts[0]}
+          <span className="text-medium-blue">forro branco neve</span>
+          {finalParts[1]}
+        </span>
+      );
+    }
     return product.name;
   };
 
