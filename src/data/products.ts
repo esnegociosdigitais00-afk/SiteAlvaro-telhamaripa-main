@@ -154,6 +154,25 @@ export const products: Product[] = [
     ]
   },
   {
+    id: 10,
+    name: "Telha Térmica Sanduiche Poliuretano (PU) 30mm TP40",
+    ref: "0001830",
+    category: "Telhas Térmicas",
+    categorySlug: "telha-metalica-sanduiche",
+    descriptionShort: "Eleve o desempenho térmico da sua cobertura com a Telha Sanduíche de Poliuretano (PU). Superior ao EPS, o núcleo de PU de 30mm oferece um isolamento térmico excepcional, bloqueando o calor com mais eficiência e garantindo um ambiente interno mais agradável e econômico. Ideal para projetos que exigem máxima performance, esta telha reduz significativamente a necessidade de climatização artificial, proporcionando conforto e economia de energia o ano todo.",
+    images: [
+      "/telha-termica-sanduiche-eps.png"
+    ],
+    specs: [
+      "Composição: Telha inferior x Placa de PU 30mm x Telha superior",
+      "Núcleo isolante em Poliuretano (PU) de alta densidade",
+      "Isolamento térmico superior ao EPS",
+      "Largura total: 1,05m",
+      "Altura do trapézio: 40mm",
+      "Máxima eficiência energética e redução de custos",
+    ]
+  },
+  {
     id: 8,
     name: "Calha Galvanizada",
     ref: "0001828",
