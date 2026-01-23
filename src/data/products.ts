@@ -133,5 +133,24 @@ export const products: Product[] = [
       "Alta resistência mecânica e à corrosão",
       "Indicada para coberturas, fachadas e fechamentos laterais",
     ]
+  },
+  {
+    id: 7,
+    name: "Telha Térmica Sanduiche (EPS)",
+    ref: "0001827",
+    category: "Telhas Térmicas",
+    categorySlug: "telha-metalica-sanduiche",
+    descriptionShort: "As Telhas Térmoacustica, popularmente conhecida como telha sanduíche, é especialmente recomendada para quem busca conforto térmico com economia de energia, reduzindo investimento nos equipamentos de climatização. Vence maiores vãos, economizando na estrutura da cobertura. O isolamento térmico proporcionado pelo núcleo atua como uma cobertura isolante contra o frio ou calor. Uma obra que tenha sua cobertura formada por essas telhas térmicas utiliza menos ar condicionado, atendendo facilmente os requisitos de economia de energia.",
+    images: [
+      "/telha-termica-sanduiche-eps.png"
+    ],
+    specs: [
+      "Composição: Telha inferior x Placa de EPS 30mm x Telha superior",
+      "Largura total: 1,05m",
+      "Altura do trapézio: 40mm",
+      "Espessura do núcleo (EPS): 30mm",
+      "Reduz o consumo de energia com climatização",
+      "Excelente isolamento térmico",
+    ]
   }
 ];

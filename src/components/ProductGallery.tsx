@@ -18,7 +18,7 @@ const mockProducts: Product[] = [
   { id: 4, name: "Isotelha Trapezoidal Térmica-Cor branco neve com forro branco neve - Nucleo em PIR 30 mm", image: "/isotelha-branca-com-forro-principal.png" },
   { id: 5, name: "Isotelha Trapezoidal Térmica - Cor Branco neve com Forro amadeirado - Núcleo em PIR 30 mm", image: "/pd-5-principal.png" },
   { id: 6, name: "Telha Galvalume Simples TP-40 Trapezoidal", image: "/telha-galvalume-simples-tp40.png" },
-  { id: 7, name: "Argamassa Polimérica", image: "public/placeholder.svg" },
+  { id: 7, name: "Telha Térmica Sanduiche (EPS)", image: "/telha-termica-sanduiche-eps.png" },
   { id: 8, name: "Telha de Fibrocimento", image: "public/placeholder.svg" },
 ];
 
