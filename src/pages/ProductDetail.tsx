@@ -175,6 +175,13 @@ const ProductDetail = () => {
             {/* Descrição Curta */}
             <ProductDescription product={product} />
 
+            {/* Disclaimer para o produto 6 */}
+            {product.id === 6 && (
+              <p className="text-sm text-gray-600 italic pt-2">
+                *Opções de cores disponíveis.
+              </p>
+            )}
+
             {/* Botão de Ação (Desktop) */}
             <div className="hidden md:block pt-4">
               <WhatsAppCtaButton productName={product.name} productRef={product.ref} />
