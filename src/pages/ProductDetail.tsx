@@ -116,14 +116,14 @@ const ProductDetail = () => {
       );
     }
     if (product.id === 4) {
-      const parts = product.name.split('Cor branco neve');
-      const finalParts = parts[1].split('forro branco neve');
+      const parts = product.name.split('Cor Branco neve');
+      const finalParts = parts[1].split('forro Branco neve');
       return (
         <span>
           {parts[0]}
-          <span className="text-medium-blue">Cor branco neve</span>
+          <span className="text-medium-blue">Cor Branco neve</span>
           {finalParts[0]}
-          <span className="text-medium-blue">forro branco neve</span>
+          <span className="text-medium-blue">forro Branco neve</span>
           {finalParts[1]}
         </span>
       );

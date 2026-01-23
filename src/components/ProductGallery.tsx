@@ -15,7 +15,7 @@ const mockProducts: Product[] = [
   { id: 1, name: "Isotelha Trapezoidal Térmica Galvalume natural SEM FORRO - núcleo em PIR 30 mm", image: "/isotelha-sem-forro.png" },
   { id: 2, name: "Isotelha Trapezoidal Térmica cor Branca SEM FORRO - núcleo em PIR 30 mm", image: "/isotelha-branca-sem-forro.png" },
   { id: 3, name: "Isotelha Trapezoidal Térmica Galvalume Natural com Forro cor Branco Neve - Núcleo em PIR 30 mm", image: "/isotelha-com-forro-natural-principal.png" },
-  { id: 4, name: "Isotelha Trapezoidal Térmica-Cor branco neve com forro branco neve - Nucleo em PIR 30 mm", image: "/isotelha-branca-com-forro-principal.png" },
+  { id: 4, name: "Isotelha Trapezoidal Térmica-Cor Branco neve com forro Branco neve - Nucleo em PIR 30 mm", image: "/isotelha-branca-com-forro-principal.png" },
   { id: 5, name: "Manta Asfáltica", image: "public/placeholder.svg" },
   { id: 6, name: "Cimento CP V", image: "public/placeholder.svg" },
   { id: 7, name: "Argamassa Polimérica", image: "public/placeholder.svg" },
@@ -89,14 +89,14 @@ const ProductCard = ({ product }: { product: Product }) => {
       );
     }
     if (product.id === 4) {
-      const parts = product.name.split('Cor branco neve');
-      const finalParts = parts[1].split('forro branco neve');
+      const parts = product.name.split('Cor Branco neve');
+      const finalParts = parts[1].split('forro Branco neve');
       return (
         <span>
           {parts[0]}
-          <span className="text-medium-blue">Cor branco neve</span>
+          <span className="text-medium-blue">Cor Branco neve</span>
           {finalParts[0]}
-          <span className="text-medium-blue">forro branco neve</span>
+          <span className="text-medium-blue">forro Branco neve</span>
           {finalParts[1]}
         </span>
       );

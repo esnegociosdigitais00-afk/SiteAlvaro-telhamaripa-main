@@ -76,7 +76,7 @@ export const products: Product[] = [
   },
   {
     id: 4,
-    name: "Isotelha Trapezoidal Térmica-Cor branco neve com forro branco neve - Nucleo em PIR 30 mm",
+    name: "Isotelha Trapezoidal Térmica-Cor Branco neve com forro Branco neve - Nucleo em PIR 30 mm",
     ref: "0001824",
     category: "Telhas Térmicas",
     categorySlug: "telha-metalica-sanduiche",
