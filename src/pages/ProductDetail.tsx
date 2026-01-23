@@ -128,6 +128,19 @@ const ProductDetail = () => {
         </span>
       );
     }
+    if (product.id === 5) {
+      const parts = product.name.split('Cor Branco neve');
+      const finalParts = parts[1].split('Forro amadeirado');
+      return (
+        <span>
+          {parts[0]}
+          <span className="text-medium-blue">Cor Branco neve</span>
+          {finalParts[0]}
+          <span className="text-medium-blue">Forro amadeirado</span>
+          {finalParts[1]}
+        </span>
+      );
+    }
     return product.name;
   };
 
