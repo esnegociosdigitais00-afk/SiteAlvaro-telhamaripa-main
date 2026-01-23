@@ -152,5 +152,24 @@ export const products: Product[] = [
       "Reduz o consumo de energia com climatização",
       "Excelente isolamento térmico",
     ]
+  },
+  {
+    id: 8,
+    name: "Calha Galvanizada",
+    ref: "0001828",
+    category: "Calhas e Rufos",
+    categorySlug: "calhas-e-rufos",
+    descriptionShort: "Essencial para a proteção da sua construção, a Calha Galvanizada é a solução ideal para o escoamento eficiente da água da chuva. Fabricada em aço galvanizado de alta qualidade, oferece excelente resistência à corrosão e durabilidade, prevenindo infiltrações e danos à estrutura do seu imóvel. Seu design funcional garante uma instalação prática e um acabamento perfeito para qualquer tipo de telhado.",
+    images: [
+      "/calha-galvanizada.png"
+    ],
+    specs: [
+      "Material: Aço Galvanizado de alta resistência",
+      "Proteção contra corrosão e ferrugem",
+      "Ideal para escoamento de águas pluviais",
+      "Previne infiltrações e umidade",
+      "Fácil instalação e baixa manutenção",
+      "Disponível em diversos tamanhos (sob consulta)",
+    ]
   }
 ];
