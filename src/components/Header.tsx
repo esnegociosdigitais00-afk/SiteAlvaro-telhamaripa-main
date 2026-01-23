@@ -1,10 +1,12 @@
 import React from 'react';
-import { Menu, Search, User, ChevronLeft } from 'lucide-react';
+import { Menu, Search, User, ChevronLeft, Phone, ChevronDown } from 'lucide-react';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
+import { Collapsible, CollapsibleContent, CollapsibleTrigger } from '@/components/ui/collapsible';
 import { cn } from '@/lib/utils';
-import { Link } from 'react-router-dom'; // Importando Link
+import { Link } from 'react-router-dom';
+import WhatsAppIcon from './WhatsAppIcon';
 
 // Componente do Logo (Usando a imagem fornecida)
 const Logo = () => (
@@ -31,31 +33,52 @@ const SearchBar = ({ className }: { className?: string }) => (
 );
 
 // Componente do Menu Hambúrguer (Sidebar)
-const MobileMenu = () => (
-  <Sheet>
-    <SheetTrigger asChild>
-      <Button variant="ghost" size="icon" className="rounded-full">
-        <Menu className="h-6 w-6 text-dark-blue" />
-      </Button>
-    </SheetTrigger>
-    <SheetContent side="left" className="w-[250px] sm:w-[300px] p-0">
-      <div className="flex flex-col h-full">
-        <div className="bg-dark-blue p-4 flex items-center justify-between">
-          <Logo />
-          <SheetTrigger asChild>
-            <Button variant="ghost" size="icon" className="text-white hover:bg-dark-blue/80">
-              <ChevronLeft className="h-6 w-6" />
-            </Button>
-          </SheetTrigger>
+const MobileMenu = () => {
+  const whatsappLink = "https://wa.me/5521967343475?text=Olá!%20Vi%20o%20site%20e%20gostaria%20de%20mais%20informações.";
+  const phoneLink = "tel:21967343475";
+
+  return (
+    <Sheet>
+      <SheetTrigger asChild>
+        <Button variant="ghost" size="icon" className="rounded-full">
+          <Menu className="h-6 w-6 text-dark-blue" />
+        </Button>
+      </SheetTrigger>
+      <SheetContent side="left" className="w-[250px] sm:w-[300px] p-0">
+        <div className="flex flex-col h-full">
+          <div className="bg-white p-4 flex items-center justify-between border-b">
+            <Logo />
+            <SheetTrigger asChild>
+              <Button variant="ghost" size="icon" className="text-dark-blue hover:bg-gray-100">
+                <ChevronLeft className="h-6 w-6" />
+              </Button>
+            </SheetTrigger>
+          </div>
+          <nav className="flex flex-col p-4 space-y-1">
+            <Link to="/" className="py-3 px-3 rounded-lg hover:bg-gray-100 transition-colors font-medium text-gray-800">Início</Link>
+            
+            <Collapsible>
+              <CollapsibleTrigger className="flex justify-between items-center w-full py-3 px-3 rounded-lg hover:bg-gray-100 data-[state=open]:bg-gray-100 transition-colors font-medium text-gray-800">
+                <span>Contato</span>
+                <ChevronDown className="h-4 w-4 transition-transform data-[state=open]:rotate-180" />
+              </CollapsibleTrigger>
+              <CollapsibleContent className="pl-4 pt-2 space-y-2">
+                <a href={phoneLink} className="flex items-center gap-3 py-2 px-3 rounded-lg text-sm text-gray-700 hover:bg-gray-100">
+                  <Phone className="h-5 w-5 text-medium-blue" />
+                  <span>Ligar Agora</span>
+                </a>
+                <a href={whatsappLink} target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 py-2 px-3 rounded-lg text-sm text-gray-700 hover:bg-gray-100">
+                  <WhatsAppIcon className="h-5 w-5 text-green-500" />
+                  <span>Orçar via WhatsApp</span>
+                </a>
+              </CollapsibleContent>
+            </Collapsible>
+          </nav>
         </div>
-        <nav className="flex flex-col p-4 space-y-2">
-          <Link to="/" className="py-2 px-3 rounded-lg hover:bg-gray-100 transition-colors">Início</Link>
-          <Link to="/contato" className="py-2 px-3 rounded-lg hover:bg-gray-100 transition-colors">Contato</Link>
-        </nav>
-      </div>
-    </SheetContent>
-  </Sheet>
-);
+      </SheetContent>
+    </Sheet>
+  );
+};
 
 const Header = () => {
   return (
