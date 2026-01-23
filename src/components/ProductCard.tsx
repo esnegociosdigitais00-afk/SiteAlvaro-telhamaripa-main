@@ -132,7 +132,7 @@ const ProductCard = ({ product }: { product: ProductForCard }) => {
         </div>
       </div>
       <CardContent className="p-4 flex flex-col flex-grow">
-        <h3 className="text-base font-semibold text-gray-900 h-12 flex items-center justify-center text-center mb-4">
+        <h3 className="text-base font-semibold text-gray-900 h-20 flex items-center justify-center text-center mb-2">
           {renderProductName()}
         </h3>
         <div className="mt-auto">
