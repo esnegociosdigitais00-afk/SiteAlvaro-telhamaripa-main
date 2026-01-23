@@ -17,7 +17,8 @@ const ProductCard = ({ product }: { product: ProductForCard }) => {
     try {
       await navigator.clipboard.writeText(text);
       showSuccess("Link do produto copiado para a área de transferência!");
-    } catch (err)      showError("Falha ao copiar o link.");
+    } catch (err) {
+      showError("Falha ao copiar o link.");
     }
   };
 
