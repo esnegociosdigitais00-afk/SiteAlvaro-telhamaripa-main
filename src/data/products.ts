@@ -136,7 +136,7 @@ export const products: Product[] = [
   },
   {
     id: 7,
-    name: "Telha Térmica Sanduiche (EPS)",
+    name: "Telha Térmica Sanduiche (EPS) 30mm TP40",
     ref: "0001827",
     category: "Telhas Térmicas",
     categorySlug: "telha-metalica-sanduiche",
