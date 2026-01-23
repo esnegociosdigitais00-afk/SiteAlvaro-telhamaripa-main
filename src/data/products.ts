@@ -114,5 +114,24 @@ export const products: Product[] = [
       "Acabamento estético superior",
       "Excelente isolamento térmico",
     ]
+  },
+  {
+    id: 6,
+    name: "Telha Galvalume Simples TP-40 Trapezoidal",
+    ref: "0001826",
+    category: "Telhas Galvalume Simples",
+    categorySlug: "telha-galvalume-simples-trapezoidal",
+    descriptionShort: "Uma da telhas metálicas mais utilizadas no mercado brasileiro, possui uma alta resistência mecânica e um baixo custo de aplicação. As Telhas Galvalume Trapezoidais TP40 são indicadas acima de tudo para fechamentos laterais, forros e coberturas em geral. Além, de serem produzidas em aço galvalume natural ou pré-pintado, conferindo maior resistência a corrosão. Permitindo assim, mais segurança e comodidade para você. Produto acima de tudo para coberturas, fachadas e fechamentos laterais em sua obra. Produzida em aço galvalume. Largura total - 1,05mt Trapezio -40mm",
+    images: [
+      "/telha-galvalume-simples-tp40.png"
+    ],
+    specs: [
+      "Modelo: TP-40 Trapezoidal",
+      "Material: Aço Galvalume",
+      "Largura total: 1,05m",
+      "Altura do trapézio: 40mm",
+      "Alta resistência mecânica e à corrosão",
+      "Indicada para coberturas, fachadas e fechamentos laterais",
+    ]
   }
 ];
