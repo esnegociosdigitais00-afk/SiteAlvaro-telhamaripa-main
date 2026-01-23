@@ -1,0 +1,22 @@
+name: Publicar Site Isotelha
+on:
+  push:
+    branches:
+      - main # O GitHub vai agir toda vez que você atualizar a branch 'main'
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Baixando o código do GitHub
+        uses: actions/checkout@v3
+
+      - name: Enviando para a HostGator via FTP
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          local-dir: ./dist/
+          server-dir: ./ 
+          # Como o seu usuário FTP na HostGator já aponta para a pasta /isotelhas, o ./ jogará os arquivos lá dentro.
