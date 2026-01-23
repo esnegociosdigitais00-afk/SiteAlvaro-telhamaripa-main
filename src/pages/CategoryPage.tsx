@@ -4,9 +4,10 @@ import { Home, ChevronRight } from 'lucide-react';
 import Header from '@/components/Header';
 import MobileFooter from '@/components/MobileFooter';
 import WhatsAppButton from '@/components/WhatsAppButton';
-import FooterSecuritySeals from '@/components/FooterSecuritySeals'; // Importando o novo componente
+import FooterSecuritySeals from '@/components/FooterSecuritySeals';
 import { MadeWithDyad } from '@/components/made-with-dyad';
-import { cn } from '@/lib/utils';
+import { products } from '@/data/products';
+import ProductCard from '@/components/ProductCard';
 
 // Função utilitária para formatar o slug (ex: 'isotelha-trapezoidal' -> 'Isotelha Trapezoidal')
 const formatCategoryName = (slug: string) => {
@@ -22,6 +23,7 @@ const CategoryPage = () => {
   if (!slug) return <div className="text-center py-20">Categoria não encontrada.</div>;
 
   const categoryName = formatCategoryName(slug);
+  const filteredProducts = products.filter(p => p.categorySlug === slug);
 
   return (
     <div className="min-h-screen flex flex-col">
@@ -45,19 +47,30 @@ const CategoryPage = () => {
           {categoryName}
         </h1>
 
-        {/* Placeholder para listagem de produtos */}
-        <div className="bg-gray-50 p-8 rounded-xl shadow-inner">
-          <p className="text-center text-gray-600 italic">
-            Em breve, você encontrará todos os produtos da categoria "{categoryName}" aqui.
-          </p>
-          {/* Aqui será implementada a grade de produtos */}
-        </div>
+        {/* Listagem de Produtos */}
+        {filteredProducts.length > 0 ? (
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+            {filteredProducts.map((product) => (
+              <ProductCard key={product.id} product={{
+                id: product.id,
+                name: product.name,
+                image: product.images[0]
+              }} />
+            ))}
+          </div>
+        ) : (
+          <div className="bg-gray-50 p-8 rounded-xl shadow-inner">
+            <p className="text-center text-gray-600 italic">
+              Nenhum produto encontrado nesta categoria no momento.
+            </p>
+          </div>
+        )}
         
       </main>
       
       <WhatsAppButton />
       <MobileFooter />
-      <FooterSecuritySeals /> {/* Adicionando o selo */}
+      <FooterSecuritySeals />
       <MadeWithDyad />
     </div>
   );
