@@ -7,7 +7,6 @@ import { Button } from '@/components/ui/button';
 import ProductImageGallery from '@/components/ProductImageGallery';
 import ProductRelatedCarousel from '@/components/ProductRelatedCarousel';
 import FooterSecuritySeals from '@/components/FooterSecuritySeals';
-import { MadeWithDyad } from '@/components/made-with-dyad';
 import { useIsMobile } from '@/hooks/use-mobile';
 import { products, Product } from '@/data/products';
 import WhatsAppIcon from '@/components/WhatsAppIcon';
@@ -213,7 +212,6 @@ const ProductDetail = () => {
 
       <WhatsAppButton isProductPage />
       <FooterSecuritySeals />
-      <MadeWithDyad />
     </div>
   );
 };

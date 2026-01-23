@@ -5,8 +5,7 @@ import MobileFooter from "@/components/MobileFooter";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import CategorySection from "@/components/CategorySection";
 import IsotelhaHighlightSection from "@/components/IsotelhaHighlightSection"; 
-import FooterSecuritySeals from "@/components/FooterSecuritySeals"; // Importando o novo componente
-import { MadeWithDyad } from "@/components/made-with-dyad";
+import FooterSecuritySeals from "@/components/FooterSecuritySeals";
 
 const Index = () => {
   return (
@@ -33,8 +32,7 @@ const Index = () => {
       
       <WhatsAppButton />
       <MobileFooter />
-      <FooterSecuritySeals /> {/* Adicionando o selo */}
-      <MadeWithDyad />
+      <FooterSecuritySeals />
     </div>
   );
 };

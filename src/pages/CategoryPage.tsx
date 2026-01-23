@@ -5,7 +5,6 @@ import Header from '@/components/Header';
 import MobileFooter from '@/components/MobileFooter';
 import WhatsAppButton from '@/components/WhatsAppButton';
 import FooterSecuritySeals from '@/components/FooterSecuritySeals';
-import { MadeWithDyad } from '@/components/made-with-dyad';
 import { products } from '@/data/products';
 import ProductCard from '@/components/ProductCard';
 
@@ -71,7 +70,6 @@ const CategoryPage = () => {
       <WhatsAppButton />
       <MobileFooter />
       <FooterSecuritySeals />
-      <MadeWithDyad />
     </div>
   );
 };
