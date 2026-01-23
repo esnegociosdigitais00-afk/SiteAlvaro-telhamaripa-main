@@ -3,7 +3,7 @@ import { ShieldCheck } from 'lucide-react';
 
 const FooterSecuritySeals: React.FC = () => {
   return (
-    <section className="bg-white py-8 border-t border-gray-100">
+    <section className="bg-white py-8 border-t border-gray-100 pb-20 md:pb-8">
       <div className="container mx-auto px-4 text-center">
         <h3 className="text-xl font-bold text-green-600 mb-6">
           Selos de Segurança

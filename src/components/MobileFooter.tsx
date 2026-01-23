@@ -22,22 +22,22 @@ const MobileFooter = () => {
 
   return (
     <footer className="fixed bottom-0 left-0 right-0 z-50 bg-white border-t border-gray-200 shadow-lg md:hidden">
-      <div className="flex justify-around items-center h-14">
+      <div className="flex justify-around items-center h-12">
         
         {/* Botão Início */}
         <Link to="/" className="flex-1">
-          <Button variant="ghost" className="flex flex-col items-center text-dark-blue/80 hover:text-medium-blue h-full w-full rounded-none">
-            <Home className="h-5 w-5" />
-            <span className="text-xs mt-0.5">Início</span>
+          <Button variant="ghost" className="flex flex-col items-center justify-center text-dark-blue/80 hover:text-medium-blue h-full w-full rounded-none">
+            <Home className="h-6 w-6" />
+            <span className="text-xs">Início</span>
           </Button>
         </Link>
 
         {/* Botão Categorias (com Drawer) */}
         <Drawer>
           <DrawerTrigger asChild className="flex-1">
-            <Button variant="ghost" className="flex flex-col items-center text-dark-blue/80 hover:text-medium-blue h-full w-full rounded-none">
-              <LayoutGrid className="h-5 w-5" />
-              <span className="text-xs mt-0.5">Categorias</span>
+            <Button variant="ghost" className="flex flex-col items-center justify-center text-dark-blue/80 hover:text-medium-blue h-full w-full rounded-none">
+              <LayoutGrid className="h-6 w-6" />
+              <span className="text-xs">Categorias</span>
             </Button>
           </DrawerTrigger>
           <DrawerContent>
@@ -66,11 +66,11 @@ const MobileFooter = () => {
         <div className="flex-1">
           <Button 
             variant="ghost" 
-            className="flex flex-col items-center text-dark-blue/80 hover:text-medium-blue h-full w-full rounded-none"
+            className="flex flex-col items-center justify-center text-dark-blue/80 hover:text-medium-blue h-full w-full rounded-none"
             onClick={() => navigate(-1)}
           >
-            <ArrowLeft className="h-5 w-5" />
-            <span className="text-xs mt-0.5">Voltar</span>
+            <ArrowLeft className="h-6 w-6" />
+            <span className="text-xs">Voltar</span>
           </Button>
         </div>
       </div>
