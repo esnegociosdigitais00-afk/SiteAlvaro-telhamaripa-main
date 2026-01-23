@@ -161,7 +161,7 @@ export const products: Product[] = [
     categorySlug: "telha-metalica-sanduiche",
     descriptionShort: "Eleve o desempenho térmico da sua cobertura com a Telha Sanduíche de Poliuretano (PU). Superior ao EPS, o núcleo de PU de 30mm oferece um isolamento térmico excepcional, bloqueando o calor com mais eficiência e garantindo um ambiente interno mais agradável e econômico. Ideal para projetos que exigem máxima performance, esta telha reduz significativamente a necessidade de climatização artificial, proporcionando conforto e economia de energia o ano todo.",
     images: [
-      "/telha-termica-sanduiche-eps.png"
+      "/telha-termica-sanduiche-pu.png"
     ],
     specs: [
       "Composição: Telha inferior x Placa de PU 30mm x Telha superior",
