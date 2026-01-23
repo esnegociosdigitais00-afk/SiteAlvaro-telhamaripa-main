@@ -8,8 +8,8 @@ import { useIsMobile } from '@/hooks/use-mobile';
 
 // Array de banners para mobile
 const mobileBanners = [
-  { src: "/banner-mobile.png", alt: "Banner promocional Isotelha Colonial" },
-  { src: "/banner-mobile-2.png", alt: "O Melhor para o seu lar - Isotelha Trapezoidal" },
+  { src: "/banner-mobile.png", alt: "O Melhor para o seu Lar - Isotelha Trapezoidal com isolamento em PIR" },
+  { src: "/banner-mobile-2.png", alt: "O Melhor para o seu Lar - Isotelha Trapezoidal com isolamento em EPS" },
 ];
 
 // Array de banners para desktop
