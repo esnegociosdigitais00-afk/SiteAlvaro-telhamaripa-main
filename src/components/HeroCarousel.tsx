@@ -40,17 +40,24 @@ const HeroCarousel = () => {
 
   const currentBanners = isMobile ? mobileBanners : desktopBanners;
 
+  // Link do WhatsApp
+  const whatsappNumber = "5521967343475";
+  const message = encodeURIComponent("Olá! Vi o anúncio no site e gostaria de solicitar um orçamento.");
+  const whatsappLink = `https://wa.me/${whatsappNumber}?text=${message}`;
+
   return (
     <div className="relative w-full h-[250px] md:h-[450px] overflow-hidden">
       <div className="embla h-full" ref={emblaRef}>
         <div className="embla__container flex h-full">
           {currentBanners.map((banner, index) => (
             <div key={index} className="relative flex-[0_0_100%] min-w-0 h-full bg-white">
-              <img
-                src={banner.src}
-                alt={banner.alt}
-                className="w-full h-full object-contain"
-              />
+              <a href={whatsappLink} target="_blank" rel="noopener noreferrer" className="block w-full h-full cursor-pointer">
+                <img
+                  src={banner.src}
+                  alt={banner.alt}
+                  className="w-full h-full object-contain"
+                />
+              </a>
             </div>
           ))}
         </div>
