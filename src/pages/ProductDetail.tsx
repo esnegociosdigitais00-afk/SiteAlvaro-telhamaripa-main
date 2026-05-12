@@ -32,7 +32,7 @@ const Breadcrumb = ({ product }: { product: Product }) => (
 
 const WhatsAppCtaButton = ({ productName, productRef }: { productName: string, productRef: string }) => {
   const whatsappNumber = "5521967308642";
-  const message = encodeURIComponent(`Olá! Gostaria de solicitar um orçamento para: ${productName} - Ref: ${productRef}`);
+  const message = encodeURIComponent(`Olá, quero fazer um orçamento para: ${productName} (Ref: ${productRef})`);
   const whatsappLink = `https://wa.me/${whatsappNumber}?text=${message}`;
 
   return (

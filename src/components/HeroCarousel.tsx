@@ -42,7 +42,7 @@ const HeroCarousel = () => {
 
   // Link do WhatsApp
   const whatsappNumber = "5521967308642";
-  const message = encodeURIComponent("Olá! Vi o anúncio no site e gostaria de solicitar um orçamento.");
+  const message = encodeURIComponent("Olá, quero fazer um orçamento");
   const whatsappLink = `https://wa.me/${whatsappNumber}?text=${message}`;
 
   return (

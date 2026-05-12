@@ -34,7 +34,7 @@ const SearchBar = ({ className }: { className?: string }) => (
 
 // Componente do Menu Hambúrguer (Sidebar)
 const MobileMenu = () => {
-  const whatsappLink = "https://wa.me/5521967308642?text=Olá!%20Vi%20o%20site%20e%20gostaria%20de%20mais%20informações.";
+  const whatsappLink = "https://wa.me/5521967308642?text=Olá,%20quero%20fazer%20um%20orçamento";
   const phoneLink = "tel:21967308642";
 
   return (
