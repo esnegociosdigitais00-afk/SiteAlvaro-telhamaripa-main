@@ -8,7 +8,7 @@ interface WhatsAppButtonProps {
 }
 
 const WhatsAppButton = ({ isProductPage = false }: WhatsAppButtonProps) => {
-  const whatsappLink = "https://wa.me/5521967343475"; 
+  const whatsappLink = "https://wa.me/5521967308642"; 
 
   return (
     <a 

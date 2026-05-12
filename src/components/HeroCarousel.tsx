@@ -41,7 +41,7 @@ const HeroCarousel = () => {
   const currentBanners = isMobile ? mobileBanners : desktopBanners;
 
   // Link do WhatsApp
-  const whatsappNumber = "5521967343475";
+  const whatsappNumber = "5521967308642";
   const message = encodeURIComponent("Olá! Vi o anúncio no site e gostaria de solicitar um orçamento.");
   const whatsappLink = `https://wa.me/${whatsappNumber}?text=${message}`;
 
