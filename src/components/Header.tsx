@@ -85,7 +85,7 @@ const Header = () => {
     <header className="sticky top-0 z-50 bg-white shadow-md">
       {/* Barra Superior */}
       <div className="bg-dark-blue text-white text-center py-2 text-sm font-medium">
-        Isotelhas RJ - Conforto que Protege
+        Vendas: (21) 9 6730-8642
       </div>
 
       {/* Barra Principal de Navegação e Busca */}
