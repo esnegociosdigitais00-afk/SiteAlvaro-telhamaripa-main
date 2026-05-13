@@ -23,7 +23,10 @@ const WhatsAppButton = ({ isProductPage = false }: WhatsAppButtonProps) => {
       )}
     >
       <Button 
-        className="w-14 h-14 rounded-full bg-green-500 hover:bg-green-600 shadow-xl p-0 relative overflow-hidden"
+        className={cn(
+          "w-14 h-14 rounded-full bg-green-500 hover:bg-green-600 shadow-xl p-0 relative overflow-hidden",
+          isProductPage && "whatsapp-btn-product"
+        )}
         aria-label="Fale conosco pelo WhatsApp"
       >
         <WhatsAppIcon className="h-9 w-9 text-white" />

@@ -38,7 +38,7 @@ const WhatsAppCtaButton = ({ productName, productRef }: { productName: string, p
   return (
     <a href={whatsappLink} target="_blank" rel="noopener noreferrer" className="w-full block">
       <Button 
-        className="w-full h-14 text-lg font-bold bg-green-500 hover:bg-green-600 rounded-xl shadow-lg transition-colors text-white"
+        className="w-full h-14 text-lg font-bold bg-green-500 hover:bg-green-600 rounded-xl shadow-lg transition-colors text-white whatsapp-btn-product"
       >
         <WhatsAppIcon className="h-6 w-6 mr-3" />
         ORÇAR VIA WHATSAPP
