@@ -8,13 +8,13 @@ import { cn } from '@/lib/utils';
 import { Link } from 'react-router-dom';
 import WhatsAppIcon from './WhatsAppIcon';
 
-// Componente do Logo (Usando a imagem fornecida)
+// Componente do Logo (Usando a nova imagem da Maripa)
 const Logo = () => (
   <Link to="/" className="flex items-center">
     <img 
-      src="/logo_isotelhas_rj_new_v2.png" 
-      alt="Isotelhas RJ - Conforto que Protege" 
-      // Altura responsiva: h-20 em mobile, h-24 em telas grandes para um logo bem maior
+      src="/logo_maripa.png" 
+      alt="Telha Sanduíche Maripa" 
+      // Mantendo as medidas exatas solicitadas: h-20 em mobile, h-24 em desktop
       className="h-20 lg:h-24 w-auto" 
     />
   </Link>
