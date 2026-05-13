@@ -35,19 +35,25 @@ const CarouselRow = ({ products: rowProducts }: { products: typeof products }) =
 const ProductGallery = () => {
   const isMobile = useIsMobile();
 
-  // Ordena os produtos para que "Isotelha" venha primeiro
-  const sortedProducts = [...products].sort((a, b) => {
+  // IDs dos produtos solicitados para a primeira linha: PU (10), EPS (7), Galvalume (6)
+  const topRowIds = [10, 7, 6];
+  
+  // Filtra e ordena os produtos da primeira linha conforme a solicitação
+  const topRowProducts = topRowIds
+    .map(id => products.find(p => p.id === id))
+    .filter((p): p is typeof products[0] => p !== undefined);
+
+  // Todos os outros produtos vão para a segunda linha
+  const bottomRowProducts = products.filter(p => !topRowIds.includes(p.id));
+
+  // Para o Desktop, mantemos a ordenação padrão (Isotelhas primeiro)
+  const desktopProducts = [...products].sort((a, b) => {
     const aIsIsotelha = a.name.toLowerCase().startsWith('isotelha');
     const bIsIsotelha = b.name.toLowerCase().startsWith('isotelha');
-
     if (aIsIsotelha && !bIsIsotelha) return -1;
     if (!aIsIsotelha && bIsIsotelha) return 1;
     return 0;
   });
-
-  // Separa os produtos ordenados em duas fileiras para mobile
-  const topRowProducts = sortedProducts.filter((_, index) => index % 2 === 0);
-  const bottomRowProducts = sortedProducts.filter((_, index) => index % 2 !== 0);
 
   return (
     <section className="py-10 bg-gray-50">
@@ -57,7 +63,7 @@ const ProductGallery = () => {
         </h2>
         
         {isMobile ? (
-          // Layout de Carrossel para Mobile
+          // Layout de Carrossel para Mobile com as fileiras específicas
           <div className="space-y-6">
             <CarouselRow products={topRowProducts} />
             <CarouselRow products={bottomRowProducts} />
@@ -65,7 +71,7 @@ const ProductGallery = () => {
         ) : (
           // Layout de Grid para Desktop
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
-            {sortedProducts.map((product) => (
+            {desktopProducts.map((product) => (
               <ProductCard key={product.id} product={{
                 id: product.id,
                 name: product.name,
