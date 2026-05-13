@@ -1,6 +1,7 @@
 export interface Product {
   id: number;
   name: string;
+  slug: string;
   ref: string;
   category: string;
   categorySlug: string;
@@ -14,6 +15,7 @@ export const products: Product[] = [
   {
     id: 1,
     name: "Isotelha Trapezoidal Térmica Galvalume natural SEM FORRO - núcleo em PIR 30 mm",
+    slug: "isotelha-trapezoidal-galvalume-natural-sem-forro",
     ref: "0001821",
     category: "Telha Térmica trapezoidal Confort",
     categorySlug: "telha-termica-trapezoidal-confort",
@@ -35,6 +37,7 @@ export const products: Product[] = [
   {
     id: 2,
     name: "Isotelha Trapezoidal Térmica cor Branco neve SEM FORRO - núcleo em PIR 30 mm",
+    slug: "isotelha-trapezoidal-branco-neve-sem-forro",
     ref: "0001822",
     category: "Telha Térmica trapezoidal Confort",
     categorySlug: "telha-termica-trapezoidal-confort",
@@ -56,6 +59,7 @@ export const products: Product[] = [
   {
     id: 3,
     name: "Isotelha Trapezoidal Térmica Galvalume Natural com Forro cor Branco Neve - Núcleo em PIR 30 mm",
+    slug: "isotelha-trapezoidal-galvalume-natural-forro-branco",
     ref: "0001823",
     category: "Telha Térmica trapezoidal Confort",
     categorySlug: "telha-termica-trapezoidal-confort",
@@ -77,6 +81,7 @@ export const products: Product[] = [
   {
     id: 4,
     name: "Isotelha Trapezoidal Térmica-Cor branco neve com forro branco neve - Nucleo em PIR 30 mm",
+    slug: "isotelha-trapezoidal-branco-neve-forro-branco",
     ref: "0001824",
     category: "Telha Térmica trapezoidal Confort",
     categorySlug: "telha-termica-trapezoidal-confort",
@@ -98,6 +103,7 @@ export const products: Product[] = [
   {
     id: 5,
     name: "Isotelha Trapezoidal Térmica - Cor Branco neve com Forro amadeirado - Núcleo em PIR 30 mm",
+    slug: "isotelha-trapezoidal-branco-neve-forro-amadeirado",
     ref: "0001825",
     category: "Telha Térmica trapezoidal Confort",
     categorySlug: "telha-termica-trapezoidal-confort",
@@ -118,6 +124,7 @@ export const products: Product[] = [
   {
     id: 6,
     name: "Telha Galvalume Simples TP-40 Trapezoidal",
+    slug: "telha-galvalume-simples-tp40",
     ref: "0001826",
     category: "Telha Galvalume Simples trapezoidal",
     categorySlug: "telha-galvalume-simples-trapezoidal",
@@ -137,6 +144,7 @@ export const products: Product[] = [
   {
     id: 7,
     name: "Telha Térmica Sanduiche (EPS) 30mm TP40",
+    slug: "telha-termica-sanduiche-eps-30mm",
     ref: "0001827",
     category: "Telha térmica trapezoidal Sanduiche",
     categorySlug: "telha-metalica-sanduiche",
@@ -156,6 +164,7 @@ export const products: Product[] = [
   {
     id: 10,
     name: "Telha Térmica Sanduiche Poliuretano (PU) 30mm TP40",
+    slug: "telha-termica-sanduiche-pu-30mm",
     ref: "0001830",
     category: "Telha térmica trapezoidal Sanduiche",
     categorySlug: "telha-metalica-sanduiche",
@@ -175,6 +184,7 @@ export const products: Product[] = [
   {
     id: 8,
     name: "Calha Galvanizada",
+    slug: "calha-galvanizada",
     ref: "0001828",
     category: "Calhas e Rufos",
     categorySlug: "calhas-e-rufos",
@@ -194,6 +204,7 @@ export const products: Product[] = [
   {
     id: 9,
     name: "Rufo Galvanizado",
+    slug: "rufo-galvanizado",
     ref: "0001829",
     category: "Calhas e Rufos",
     categorySlug: "calhas-e-rufos",

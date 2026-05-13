@@ -53,6 +53,7 @@ const CategoryPage = () => {
               <ProductCard key={product.id} product={{
                 id: product.id,
                 name: product.name,
+                slug: product.slug,
                 image: product.images[0]
               }} />
             ))}

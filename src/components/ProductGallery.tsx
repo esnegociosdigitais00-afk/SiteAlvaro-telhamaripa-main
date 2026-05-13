@@ -23,6 +23,7 @@ const CarouselRow = ({ products: rowProducts }: { products: typeof products }) =
             <ProductCard product={{
               id: product.id,
               name: product.name,
+              slug: product.slug,
               image: product.images[0]
             }} />
           </div>
@@ -75,6 +76,7 @@ const ProductGallery = () => {
               <ProductCard key={product.id} product={{
                 id: product.id,
                 name: product.name,
+                slug: product.slug,
                 image: product.images[0]
               }} />
             ))}

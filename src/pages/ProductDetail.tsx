@@ -74,8 +74,8 @@ const TechnicalSpecs = ({ specs }: { specs: string[] }) => (
 // --- Main Page Component ---
 
 const ProductDetail = () => {
-  const { id } = useParams<{ id: string }>();
-  const product = products.find(p => p.id === Number(id));
+  const { slug } = useParams<{ slug: string }>();
+  const product = products.find(p => p.slug === slug);
   const isMobile = useIsMobile();
 
   if (!product) {

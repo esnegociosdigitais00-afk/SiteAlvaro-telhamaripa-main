@@ -9,6 +9,7 @@ import { cn } from '@/lib/utils';
 interface ProductForCard {
   id: number;
   name: string;
+  slug: string;
   image: string;
 }
 
@@ -26,7 +27,7 @@ const ProductCard = ({ product }: { product: ProductForCard }) => {
   const handleShare = async (e: React.MouseEvent) => {
     e.preventDefault();
     
-    const productUrl = `${window.location.origin}/produto/${product.id}`;
+    const productUrl = `${window.location.origin}/produto/${product.slug}`;
     
     if (navigator.share) {
       try {
@@ -142,7 +143,7 @@ const ProductCard = ({ product }: { product: ProductForCard }) => {
           {renderProductName()}
         </h3>
         <div>
-          <Link to={`/produto/${product.id}`}>
+          <Link to={`/produto/${product.slug}`}>
             <Button className="w-full bg-medium-blue hover:bg-medium-blue/90 rounded-lg transition-colors">
               Ver Detalhes
             </Button>

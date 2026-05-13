@@ -58,6 +58,7 @@ const ProductRelatedCarousel: React.FC<ProductRelatedCarouselProps> = ({ categor
               <ProductCard product={{
                 id: product.id,
                 name: product.name,
+                slug: product.slug,
                 image: product.images[0]
               }} />
             </div>
