@@ -83,9 +83,9 @@ const MobileMenu = () => {
 const Header = () => {
   return (
     <header className="sticky top-0 z-50 bg-white shadow-md">
-      {/* Barra Superior de Vendas */}
+      {/* Barra Superior */}
       <div className="bg-dark-blue text-white text-center py-2 text-sm font-medium">
-        Vendas: (21) 9 6730-8642
+        Telha Sanduiche Maripá - Conforto que protege
       </div>
 
       {/* Barra Principal de Navegação e Busca */}
