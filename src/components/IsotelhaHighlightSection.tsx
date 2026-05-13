@@ -13,10 +13,10 @@ const IsotelhaHighlightSection: React.FC = () => {
             </h2>
             <div className="text-lg text-gray-700 space-y-4">
               <p>
-                Bem-vindo à Isotelha RJ, sua parceira em conforto e inovação. Sabemos que o clima do Rio pede soluções inteligentes, e é por isso que nos dedicamos a oferecer o melhor em telhas térmicas e acessórios para sua obra.
+                Bem-vindo à Telhas Sanduiche Maripá, sua parceira em conforto e inovação. Sabemos que o clima do Rio pede soluções inteligentes, e é por isso que nos dedicamos a oferecer o melhor em telhas térmicas e acessórios para sua obra.
               </p>
               <p>
-                Nossa trajetória é pautada pelo compromisso de transformar ambientes. Seja para uma residência que busca refrescar os dias de verão ou para um galpão comercial que precisa de silêncio e proteção, a Isotelha RJ oferece produtos que unem resistência e design. Mais do que vender telhas, entregamos tranquilidade e a certeza de um investimento que valoriza o seu patrimônio.
+                Nossa trajetória é pautada pelo compromisso de transformar ambientes. Seja para uma residência que busca refrescar os dias de verão ou para um galpão comercial que precisa de silêncio e proteção, a Telhas Sanduiche Maripá oferece produtos que unem resistência e design. Mais do que vender telhas, entregamos tranquilidade e a certeza de um investimento que valoriza o seu patrimônio.
               </p>
             </div>
           </div>
@@ -24,7 +24,7 @@ const IsotelhaHighlightSection: React.FC = () => {
           {/* Coluna de Mosaico de Imagens (1/3) */}
           <div className="md:col-span-1 grid grid-cols-2 gap-4">
             <div className="aspect-square overflow-hidden rounded-lg shadow-lg">
-              <img src="/empresa-frente.jpeg" alt="Frente da loja Isotelha RJ" className="w-full h-full object-cover transition-transform duration-300 hover:scale-105" />
+              <img src="/empresa-frente.jpeg" alt="Frente da loja Telhas Sanduiche Maripá" className="w-full h-full object-cover transition-transform duration-300 hover:scale-105" />
             </div>
             <div className="aspect-square overflow-hidden rounded-lg shadow-lg">
               <img src="/empresa-estoque.webp" alt="Estoque de telhas" className="w-full h-full object-cover transition-transform duration-300 hover:scale-105" />
