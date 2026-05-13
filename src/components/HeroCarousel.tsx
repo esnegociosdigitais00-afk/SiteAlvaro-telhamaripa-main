@@ -12,10 +12,11 @@ const mobileBanners = [
   { src: "/banner-mobile-2.png", alt: "O Melhor para o seu Lar - Isotelha Trapezoidal com isolamento em EPS" },
 ];
 
-// Array de banners para desktop
+// Array de banners para desktop (Atualizado com 3 banners)
 const desktopBanners = [
-  { src: "/banner-desktop-1.png", alt: "Banner promocional Isotelha Trapezoidal com isolamento em PIR" },
-  { src: "/banner-desktop-2.png", alt: "Banner promocional Isotelha Trapezoidal com isolamento em EPS" },
+  { src: "/banner-desktop-1.png", alt: "As melhores Telhas para a sua cobertura - Telha Sanduíche Maripa" },
+  { src: "/banner-desktop-2.png", alt: "Isotelha Trapezoidal com isolamento em EPS - 30mm de espessura" },
+  { src: "/banner-desktop-3.png", alt: "Isotelha Trapezoidal Confort com isolamento em PIR - 30mm de espessura" },
 ];
 
 const HeroCarousel = () => {
