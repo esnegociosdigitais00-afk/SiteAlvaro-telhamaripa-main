@@ -85,7 +85,7 @@ const Header = () => {
     <header className="sticky top-0 z-50 bg-white shadow-md">
       {/* Barra Superior */}
       <div className="bg-dark-blue text-white text-center py-2 text-sm font-medium">
-        Telha Sanduiche Maripá - Conforto que protege
+        Isotelhas RJ - Conforto que Protege
       </div>
 
       {/* Barra Principal de Navegação e Busca */}
