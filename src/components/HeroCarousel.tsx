@@ -6,7 +6,7 @@ import { cn } from '@/lib/utils';
 import { ArrowLeft, ArrowRight } from 'lucide-react';
 import { useIsMobile } from '@/hooks/use-mobile';
 
-// Array de banners para mobile (Atualizado com 3 banners)
+// Array de banners para mobile
 const mobileBanners = [
   { src: "/banner-mobile-1.png", alt: "As melhores Telhas para a sua cobertura - Telha Sanduíche Maripa" },
   { src: "/banner-mobile-2.png", alt: "Isotelha Trapezoidal com isolamento em EPS - 30mm de espessura" },
