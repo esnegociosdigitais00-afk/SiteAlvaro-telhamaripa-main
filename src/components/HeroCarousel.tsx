@@ -6,13 +6,14 @@ import { cn } from '@/lib/utils';
 import { ArrowLeft, ArrowRight } from 'lucide-react';
 import { useIsMobile } from '@/hooks/use-mobile';
 
-// Array de banners para mobile
+// Array de banners para mobile (Atualizado com 3 banners)
 const mobileBanners = [
-  { src: "/banner-mobile.png", alt: "O Melhor para o seu Lar - Isotelha Trapezoidal com isolamento em PIR" },
-  { src: "/banner-mobile-2.png", alt: "O Melhor para o seu Lar - Isotelha Trapezoidal com isolamento em EPS" },
+  { src: "/banner-mobile-1.png", alt: "As melhores Telhas para a sua cobertura - Telha Sanduíche Maripa" },
+  { src: "/banner-mobile-2.png", alt: "Isotelha Trapezoidal com isolamento em EPS - 30mm de espessura" },
+  { src: "/banner-mobile-3.png", alt: "Isotelha Trapezoidal linha Confort com isolamento em PIR - 30mm de espessura" },
 ];
 
-// Array de banners para desktop (Atualizado com 3 banners)
+// Array de banners para desktop
 const desktopBanners = [
   { src: "/banner-desktop-1.png", alt: "As melhores Telhas para a sua cobertura - Telha Sanduíche Maripa" },
   { src: "/banner-desktop-2.png", alt: "Isotelha Trapezoidal com isolamento em EPS - 30mm de espessura" },
